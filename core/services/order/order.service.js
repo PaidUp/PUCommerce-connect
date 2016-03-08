@@ -1,14 +1,6 @@
 'use strict';
 
 var request = require('request')
-//var httpUtil = require('../http/http.util');
-//var config = require('../config/index');
-//var urlencode = require('urlencode');
-
-//exports.init = function(connection) {
-    //config.app.connection = connection;
-//}
-
 // **
 // ** Order
 // **

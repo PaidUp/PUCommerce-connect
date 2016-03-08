@@ -1,21 +1,24 @@
-var test = require('tape');
-var orderService = require('../../services/order/order.service');
+'use strict'
+let proxyquire = require('proxyquire');
+let test = require('tape');
+//var requestStub = {};
+//var orderService = require('../../services/order/order.service');
+//https://github.com/substack/tape
 //https://github.com/aghassemi/tap-xunit
-
-/*test.skip('order test', function (t) {
-	orderService.test(function(err, data){
-		t.equal(err, null);
-        t.equal(data, true);
-		console.log('err', err)
-		console.log('data', data)
-		t.end()
-	})
-});*/
+//https://www.npmjs.com/package/proxyquire
 
 test('order create', function (t) {
-	orderService.create({'data':'data'}, function(err, data){
+
+	let requestStub = function (input, cb) {
+		return cb(null, {statusCode:200},{'jesse':'cogollo'});
+	};
+	var orderService = proxyquire('../../services/order/order.service', {
+		'request': requestStub
+	});
+
+	orderService.create({'data':'data'},function(err, data){
 		t.equal(err, null);
-        t.equal(data.jesse, 'cogollo')
-		t.end()
+    t.equal(data.jesse, 'cogollo')
+	t.end()
 	})
 });
