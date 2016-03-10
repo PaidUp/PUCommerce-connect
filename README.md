@@ -14,7 +14,7 @@ $ npm install -g machinepack
 ```
 
 ```sh
-$ npm install PUCommerce-connect (TODO)
+$ npm install pu-commerce-connect
 ```
 
 ##Info
@@ -33,12 +33,14 @@ $ npm test
 
 ### cart-create
 ```sh
-$ mp exec cart-create
+$ mp exec create-coupon
+
+$ mp exec redeem-coupon
 ```
 
 ## Usage
 
-For the latest usage documentation, version information, and test status of this module, see <a href="http://node-machine.org/machinepack-product-price-calculations" title="Calculate product price for customers (for node.js)">http://node-machine.org/machinepack-product-price-calculations</a>.  The generated manpages for each machine contain a complete reference of all expected inputs, possible exit states, and example return values.  If you need more help, or find a bug, jump into [Gitter](https://gitter.im/node-machine/general) or leave a message in the project [newsgroup](https://groups.google.com/forum/?hl=en#!forum/node-machine).
+For the latest usage documentation, version information, and test status of this module, see <a href="http://node-machine.org/pu-commerce-connect" title="Connect with TDCommerce (for node.js)">http://node-machine.org/pu-commerce-connect</a>.  The generated manpages for each machine contain a complete reference of all expected inputs, possible exit states, and example return values.  If you need more help, or find a bug, jump into [Gitter](https://gitter.im/node-machine/general) or leave a message in the project [newsgroup](https://groups.google.com/forum/?hl=en#!forum/node-machine).
 
 ## About  &nbsp; [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/node-machine/general?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
