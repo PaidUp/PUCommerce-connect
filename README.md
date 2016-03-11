@@ -35,6 +35,8 @@ $ npm test
 ```sh
 $ mp exec create-coupon
 
+$ mp exec list-coupon
+
 $ mp exec redeem-coupon
 ```
 
