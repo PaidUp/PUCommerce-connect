@@ -42,7 +42,7 @@ module.exports = {
       description : 'Quantity of coupon is available.',
       required : true
     },
-    ProductsId : {
+    productsId : {
       example : [],
       description : 'array to productsId, this contain a list of products that the coupon is available.',
       required : true
