@@ -80,7 +80,7 @@ module.exports = {
       endDate: inputs.endDate,
       percent: inputs.percent,
       quantity: inputs.quantity,
-      ProductsId: inputs.ProductsId
+      productsId: inputs.productsId
     }
 
     Connector.request(config, {}, body, function(err, resp){
