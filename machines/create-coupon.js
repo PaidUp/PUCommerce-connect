@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
   friendlyName: 'Crate Coupon',
   description: 'Create a discont coupon',
@@ -21,12 +23,12 @@ module.exports = {
       required : true
     },
     startDate : {
-      example : new Date(),
+      example : "2016-05-05",
       description : 'Date that allow to know when the coupon started its available.',
       required : true
     },
     endDate : {
-      example : new Date(),
+      example : "2016-06-06",
       description : 'Date that allow to know when the coupon ended its available.',
       required : true
     },
@@ -52,8 +54,8 @@ module.exports = {
 
     success: {
       code: 'NEWDISCOUNTCOUPON',
-      startDate: "2016-05-05T05:00:00.000Z",
-      endDate: "2016-06-06T05:00:00.000Z",
+      startDate: "2016-05-05",
+      endDate: "2016-06-06",
       percent: 10,
       quantity: 2,
       ProductsId: []
@@ -66,7 +68,7 @@ module.exports = {
     let Connector  = require('../core/common/connector');
 
     let config = {
-      url: '/api/v1/coupon/create',
+      url: '/api/v1/commerce/coupon/create',
       baseUrl: inputs.baseUrl,
       method: 'post',
       token : inputs.token//'tdcommerce-secret'

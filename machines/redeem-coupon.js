@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
 
 
@@ -58,7 +60,7 @@ module.exports = {
     let Connector  = require('../core/common/connector');
 
     let config = {
-      url: '/api/v1/coupon/update',
+      url: '/api/v1/commerce/coupon/update',
       baseUrl: inputs.baseUrl,
       method: 'put',
       token : inputs.token//'tdcommerce-secret'

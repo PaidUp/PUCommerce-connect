@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = {
   friendlyName: 'Get Coupon',
   description: 'get a list of discont coupon',
@@ -29,8 +31,8 @@ module.exports = {
 
     success: [{
       code: 'NEWDISCOUNTCOUPON',
-      startDate: "2016-05-05T05:00:00.000Z",
-      endDate: "2016-06-06T05:00:00.000Z",
+      startDate: "2016-05-05",
+      endDate: "2016-06-06",
       percent: 10,
       quantity: 2,
       ProductsId: []
@@ -43,12 +45,13 @@ module.exports = {
     let Connector  = require('../core/common/connector');
 
     let config = {
-      url: '/api/v1/coupon/list',
+      url: '/api/v1/commerce/coupon/list',
       baseUrl: inputs.baseUrl,
       method: 'post',
       token : inputs.token//'tdcommerce-secret'
     }
     let filter = (typeof inputs.filter === "object") ? inputs.filter : {}
+    let body = filter
 
     Connector.request(config, {}, filter, function(err, resp){
       if(err){
