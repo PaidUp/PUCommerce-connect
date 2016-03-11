@@ -3,10 +3,10 @@
 module.exports = {
 
 
-  friendlyName: 'Redeem Coupon',
+  friendlyName: 'Update Coupon',
 
 
-  description: 'Redeem a coupon discount',
+  description: 'Update a coupon discount',
 
 
   cacheable: false,
@@ -25,13 +25,13 @@ module.exports = {
       description : 'secret word for authenticate microservice.',
       required : true
     },
-    coupon : {
-      example: 'NEWDISCOUNTCOUPON',
+    filter : {
+      example: '*',
       description : 'It is a object that contain the key value to filters the coupons',
       required : true
     },
-    productId : {
-      example: 'Id1',
+    data : {
+      example: '*',
       description : 'It is a object that contain the key value to filters the list coupons. if you want a complete list os coupon send a empty object {}',
       required : true
     }
@@ -41,10 +41,12 @@ module.exports = {
 
   exits: {
 
-    success: {
-      _id: 'NEWDISCOUNTCOUPON',
-      percent: 10
-    }
+    success: {"orders": {
+        "ok": 1,
+        "nModified": 1,
+        "n": 1
+      }
+    },
   },
 
 
@@ -54,14 +56,14 @@ module.exports = {
     let Connector  = require('../core/common/connector');
 
     let config = {
-      url: '/api/v1/commerce/coupon/redeem',
+      url: '/api/v1/commerce/coupon/update',
       baseUrl: inputs.baseUrl,
-      method: 'post',
+      method: 'put',
       token : inputs.token//'tdcommerce-secret'
     }
     let body = {
-      coupon: inputs.coupon,
-      productId: inputs.productId
+      filter: inputs.filter,
+      data: inputs.data
     }
 
     Connector.request(config, {}, body, function(err, resp){
@@ -72,4 +74,7 @@ module.exports = {
       }
     });
   },
+
+
+
 };

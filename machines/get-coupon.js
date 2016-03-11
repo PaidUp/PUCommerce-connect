@@ -18,14 +18,11 @@ module.exports = {
       required : true
     },
     filter : {
-      example : {
-        code: 'NEWDISCOUNTCOUPON'
-      },
+      example : "*",
       description : 'It is a object that contain the key value to filters the list coupons. if you want a complete list os coupon send a empty object {}',
       required : false
     }
   },
-
 
   exits: {
 
@@ -50,8 +47,7 @@ module.exports = {
       method: 'post',
       token : inputs.token//'tdcommerce-secret'
     }
-    let filter = (typeof inputs.filter === "object") ? inputs.filter : {}
-    let body = filter
+    let body = inputs.filter
 
     Connector.request(config, {}, filter, function(err, resp){
       if(err){

@@ -38,7 +38,8 @@
     "machines": [
       "get-coupon",
       "create-coupon",
-      "redeem-coupon"
+      "redeem-coupon",
+      "update-coupon"
     ]
   },
   "repository": {
