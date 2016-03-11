@@ -12,7 +12,6 @@ module.exports = {
 
   sync: false,
 
-
   inputs: {
     baseUrl : {
       example : 'http://localhost:9002',
@@ -23,6 +22,20 @@ module.exports = {
       example : 'secret-word',
       description : 'secret word for authenticate microservice.',
       required : true
+    },
+    filter : {
+      example : {
+        code: 'NEWDISCOUNTCOUPON'
+      },
+      description : 'It is a object that contain the key value to filters the coupons',
+      required : true
+    },
+    data : {
+      example : {
+        value: 20
+      },
+      description : 'It is a object that contain the key value to filters the list coupons. if you want a complete list os coupon send a empty object {}',
+      required : true
     }
 
   },
@@ -30,11 +43,12 @@ module.exports = {
 
   exits: {
 
-    success: {
-      variableName: 'result',
-      description: 'Done.',
+    success: {"orders": {
+        "ok": 1,
+        "nModified": 1,
+        "n": 1
+      }
     },
-
   },
 
 
@@ -42,7 +56,25 @@ module.exports = {
     /**/
   ) {
     let Connector  = require('../core/common/connector');
-    return exits.success();
+
+    let config = {
+      url: '/api/v1/coupon/update',
+      baseUrl: inputs.baseUrl,
+      method: 'put',
+      token : inputs.token//'tdcommerce-secret'
+    }
+    let body = {
+      filter: inputs.filter,
+      data: inputs.data
+    }
+
+    Connector.request(config, {}, body, function(err, resp){
+      if(err){
+        return exits.error(err);
+      }else{
+        return exits.success(resp);
+      }
+    });
   },
 
 

@@ -36,7 +36,7 @@
     "friendlyName": "PUCommerceConnect",
     "machineDir": "machines/",
     "machines": [
-      "cart-create",
+      "get-coupon",
       "create-coupon",
       "redeem-coupon"
     ]
