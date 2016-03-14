@@ -30,7 +30,7 @@ function request(config, params, body,  cb) {
 // 400 status code returned from server
       badRequest: function (result) {
         return cb({status : 400,
-          message : result.body
+          message : JSON.parse(result.body)
         })
       },
 // 403 status code returned from server

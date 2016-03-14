@@ -48,24 +48,17 @@ module.exports = {
       }
     },
     error: {
-      description: '',
+      description: 'error unexpected',
       example: {
         status: 500,
         message : '[{"maybe some JSON": "like this"}]  (but could be any string)'
       }
     },
-    expired: {
-      description: 'The coupon has expired',
-      example: {
-        status: 400,
-        message: 'The coupon has expired'
-      }
-    },
     notAvailable: {
-      description: 'Currently out of stock',
+      description: 'Currently coupon is not available',
       example: {
         status: 400,
-        message: 'Currently out of stock'
+        message: '[{"maybe some JSON": "like this"}]  (but could be any string)'
       }
     }
   },
@@ -89,7 +82,12 @@ module.exports = {
     }
 
     Connector.request(config, {}, body, function(err, resp){
-      if(err){
+      if(err && err.message.statusCode === 'notAvailable'){
+        return exits.notAvailable({
+          status: err.status,
+          message: err.message.message
+        });
+      }else if(err){
         return exits.error({
           status: err.status,
           message: err.body

@@ -38,6 +38,8 @@ $ mp exec create-coupon
 $ mp exec list-coupon
 
 $ mp exec redeem-coupon
+
+$ mp exec update-coupon
 ```
 
 ## Usage
