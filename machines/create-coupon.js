@@ -51,7 +51,7 @@ module.exports = {
 
     success: {
       friendlyName: 'then',
-      description,
+      description:'success',
       example: {
         status: 201,
         body: {code: 'NEWDISCOUNTCOUPON',
