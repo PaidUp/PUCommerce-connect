@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = {
 
 
@@ -42,8 +40,33 @@ module.exports = {
   exits: {
 
     success: {
-      _id: 'NEWDISCOUNTCOUPON',
-      percent: 10
+      friendlyName: 'then',
+      description: 'Object with id coupon and discount percent',
+      example: {
+        _id: 'NEWDISCOUNTCOUPON',
+        percent: 10
+      }
+    },
+    error: {
+      description: '',
+      example: {
+        status: 500,
+        message : '[{"maybe some JSON": "like this"}]  (but could be any string)'
+      }
+    },
+    expired: {
+      description: 'The coupon has expired',
+      example: {
+        status: 400,
+        message: 'The coupon has expired'
+      }
+    },
+    notAvailable: {
+      description: 'Currently out of stock',
+      example: {
+        status: 400,
+        message: 'Currently out of stock'
+      }
     }
   },
 
@@ -51,24 +74,31 @@ module.exports = {
   fn: function(inputs, exits
     /**/
   ) {
-    let Connector  = require('../core/common/connector');
+    var Connector  = require('../core/common/connector');
 
-    let config = {
+    var config = {
       url: '/api/v1/commerce/coupon/redeem',
       baseUrl: inputs.baseUrl,
       method: 'post',
-      token : inputs.token//'tdcommerce-secret'
+      token : inputs.token
     }
-    let body = {
+
+    var body = {
       coupon: inputs.coupon,
       productId: inputs.productId
     }
 
     Connector.request(config, {}, body, function(err, resp){
       if(err){
-        return exits.error(err);
+        return exits.error({
+          status: err.status,
+          message: err.body
+        });
       }else{
-        return exits.success(resp);
+        return exits.success({
+          status : resp.status,
+          body : resp.body
+        });
       }
     });
   },

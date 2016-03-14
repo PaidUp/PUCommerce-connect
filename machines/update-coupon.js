@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = {
 
 
@@ -40,37 +38,52 @@ module.exports = {
 
 
   exits: {
-
-    success: {"orders": {
+    success: {
+      friendlyName: 'then',
+      description: '',
+      example: {
         "ok": 1,
         "nModified": 1,
         "n": 1
       }
     },
+    error: {
+      description: 'Some error',
+      example:{
+        staus: 500,
+        message: '[{"maybe some JSON": "like this"}]  (but could be any string)'
+      }
+    }
   },
 
 
   fn: function(inputs, exits
     /**/
   ) {
-    let Connector  = require('../core/common/connector');
+    var Connector  = require('../core/common/connector');
 
-    let config = {
+    var config = {
       url: '/api/v1/commerce/coupon/update',
       baseUrl: inputs.baseUrl,
       method: 'put',
-      token : inputs.token//'tdcommerce-secret'
+      token : inputs.token
     }
-    let body = {
+    var body = {
       filter: inputs.filter,
       data: inputs.data
     }
 
     Connector.request(config, {}, body, function(err, resp){
       if(err){
-        return exits.error(err);
+        return exits.error({
+          status: err.staus,
+          message: err.body
+        });
       }else{
-        return exits.success(resp);
+        return exits.success({
+          status: resp.status,
+          body: resp.body
+        });
       }
     });
   },

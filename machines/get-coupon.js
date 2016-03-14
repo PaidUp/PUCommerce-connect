@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = {
   friendlyName: 'Get Coupon',
   description: 'get a list of discont coupon',
@@ -26,38 +24,56 @@ module.exports = {
 
   exits: {
 
-    success: [{
-      code: 'NEWDISCOUNTCOUPON',
-      startDate: "2016-05-05",
-      endDate: "2016-06-06",
-      percent: 10,
-      quantity: 2,
-      ProductsId: []
-    }],
+    success: {
+      friendlyName: 'then',
+      description: 'Array with coupons result',
+      example: {
+        status: 200,
+        body: [{
+          code: 'NEWDISCOUNTCOUPON',
+          startDate: "2016-05-05",
+          endDate: "2016-06-06",
+          percent: 10,
+          quantity: 2,
+          ProductsId: []
+        }]
+      }
+    },
+
+    error: {
+      description: 'Some error',
+      example: {
+        status: 500,
+        message: '[{"maybe some JSON": "like this"}]  (but could be any string)'
+      }
+    }
 
   },
 
 
   fn: function(inputs, exits) {
-    let Connector  = require('../core/common/connector');
+    var Connector  = require('../core/common/connector');
 
-    let config = {
+    var config = {
       url: '/api/v1/commerce/coupon/list',
       baseUrl: inputs.baseUrl,
       method: 'post',
-      token : inputs.token//'tdcommerce-secret'
+      token : inputs.token
     }
-    let body = inputs.filter
+    var body = inputs.filter
 
-    Connector.request(config, {}, filter, function(err, resp){
+    Connector.request(config, {}, body, function(err, resp){
       if(err){
-        return exits.error(err);
+        return exits.error({
+          staus: err.status,
+          message: err.body
+        });
       }else{
-        return exits.success(resp);
+        return exits.success({
+          status: resp.status,
+          body: resp.body
+        });
       }
     });
   },
-
-
-
 };
