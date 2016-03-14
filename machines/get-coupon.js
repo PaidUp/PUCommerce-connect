@@ -59,13 +59,14 @@ module.exports = {
       baseUrl: inputs.baseUrl,
       method: 'post',
       token : inputs.token
-    }
-    var body = inputs.filter
+    };
+
+    var body = inputs.filter;
 
     Connector.request(config, {}, body, function(err, resp){
       if(err){
         return exits.error({
-          staus: err.status,
+          status: err.status,
           message: err.body
         });
       }else{
@@ -75,5 +76,5 @@ module.exports = {
         });
       }
     });
-  },
+  }
 };
