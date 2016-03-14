@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = {
   friendlyName: 'Crate Coupon',
   description: 'Create a discont coupon',
@@ -24,12 +22,12 @@ module.exports = {
     },
     startDate : {
       example : "2016-05-05",
-      description : 'Date that allow to know when the coupon started its available.',
+      description : 'Date that allow to know when the coupon started its available. Format YYYY-MM-DD',
       required : true
     },
     endDate : {
       example : "2016-06-06",
-      description : 'Date that allow to know when the coupon ended its available.',
+      description : 'Date that allow to know when the coupon ended its available. Format YYYY-MM-DD',
       required : true
     },
     percent : {
@@ -43,38 +41,49 @@ module.exports = {
       required : true
     },
     productsId : {
-      example : [],
+      example : ['someProductId'],
       description : 'array to productsId, this contain a list of products that the coupon is available.',
       required : true
     }
   },
 
-
   exits: {
 
     success: {
-      code: 'NEWDISCOUNTCOUPON',
-      startDate: "2016-05-05",
-      endDate: "2016-06-06",
-      percent: 10,
-      quantity: 2,
-      ProductsId: []
+      friendlyName: 'then',
+      description,
+      example: {
+        status: 201,
+        body: {code: 'NEWDISCOUNTCOUPON',
+          startDate: "2016-05-05",
+          endDate: "2016-06-06",
+          percent: 10,
+          quantity: 2,
+          ProductsId: ['someProducId']}
+      }
     },
+    error: {
+      description: 'Some error',
+      example: {
+        status: 400,
+        message: '[{"maybe some JSON": "like this"}]  (but could be any string)'
+      }
+    }
 
   },
 
 
   fn: function(inputs, exits) {
-    let Connector  = require('../core/common/connector');
+    var Connector  = require('../core/common/connector');
 
-    let config = {
+    var config = {
       url: '/api/v1/commerce/coupon/create',
       baseUrl: inputs.baseUrl,
       method: 'post',
-      token : inputs.token//'tdcommerce-secret'
+      token : inputs.token
     }
 
-    let body = {
+    var body = {
       code: inputs.code,
       startDate: inputs.startDate,
       endDate: inputs.endDate,
@@ -85,9 +94,15 @@ module.exports = {
 
     Connector.request(config, {}, body, function(err, resp){
       if(err){
-        return exits.error(err);
+        return exits.error({
+          status: err.status,
+          message: err.body
+        });
       }else{
-        return exits.success(resp);
+        return exits.success({
+          status: resp.status,
+          body: resp.body
+        });
       }
     });
   },
