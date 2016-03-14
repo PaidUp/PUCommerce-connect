@@ -11,7 +11,7 @@ function request(config, params, body,  cb) {
       params: params,
       body: body,
       formData: false,
-      headers: {Authorization : config.token},
+      headers: {authorization : config.token},
 
     }).exec({
 // An unexpected error occurred.
