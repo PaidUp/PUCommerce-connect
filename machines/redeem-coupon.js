@@ -43,8 +43,11 @@ module.exports = {
       friendlyName: 'then',
       description: 'Object with id coupon and discount percent',
       example: {
-        _id: 'NEWDISCOUNTCOUPON',
-        percent: 10
+        status: 200,
+        body : {
+          _id: 'NEWDISCOUNTCOUPON',
+          percent: 10
+        }
       }
     },
     error: {
@@ -58,7 +61,7 @@ module.exports = {
       description: 'Currently coupon is not available',
       example: {
         status: 400,
-        message: '[{"maybe some JSON": "like this"}]  (but could be any string)'
+        message: 'this coupon is not available'
       }
     }
   },
@@ -93,6 +96,8 @@ module.exports = {
           message: err.body
         });
       }else{
+        console.log('resp.body',resp.body);
+
         return exits.success({
           status : resp.status,
           body : resp.body
