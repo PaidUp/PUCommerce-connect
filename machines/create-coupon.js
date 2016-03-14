@@ -1,6 +1,6 @@
 module.exports = {
-  friendlyName: 'Crate Coupon',
-  description: 'Create a discont coupon',
+  friendlyName: 'Create Coupon',
+  description: 'Create a discount coupon',
   cacheable: false,
   sync: false,
 
@@ -106,7 +106,5 @@ module.exports = {
       }
     });
   },
-
-
 
 };
