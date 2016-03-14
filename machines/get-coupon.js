@@ -11,7 +11,7 @@ module.exports = {
       required : true
     },
     token : {
-      example : 'secret-word',
+      example : 'TDCommerceToken-CHANGE-ME!',
       description : 'secret word for authenticate microservice.',
       required : true
     },
