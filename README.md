@@ -31,7 +31,7 @@ $ npm test
 
 ##Exec
 
-### cart-create
+### coupon
 ```sh
 $ mp exec create-coupon
 

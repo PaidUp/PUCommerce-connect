@@ -39,7 +39,8 @@
       "get-coupon",
       "create-coupon",
       "redeem-coupon",
-      "update-coupon"
+      "update-coupon",
+      "order/create-order"
     ]
   },
   "repository": {
