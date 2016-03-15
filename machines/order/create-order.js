@@ -24,6 +24,11 @@ module.exports = {
       example : 'secret-word',
       description : 'secret word for authenticate microservice.',
       required : true
+    },
+    userId : {
+      example : 'userId',
+      description : 'userId to own order.',
+      required : true
     }
   },
 
@@ -62,9 +67,9 @@ module.exports = {
       method: 'post',
       token : inputs.token
     }
-
+    let body = {userId: inputs.userId};
     //Connector.request(config, params, body, cb)
-    Connector.request(config, {}, {}, function(err, resp){
+    Connector.request(config, {}, body, function(err, resp){
       if(err && err.message.statusCode === 'notAvailable'){
         return exits.notAvailable({
           status: err.status,
