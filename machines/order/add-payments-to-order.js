@@ -28,14 +28,14 @@ module.exports = {
         price: 100,
         typeAccount: 'typeAccount',
         account: 'account',
-        discount: 0, /* optional default 0*/
-        discountCode: 'discountCode', /* optional*/
-        wasProcessed: false,/* optional default false*/
-        status: 'pending',/* optional default pending*/
+        discount: 0, // optional default 0
+        discountCode: 'discountCode', // optional
+        wasProcessed: false,// optional default false
+        status: 'pending',// optional default pending
         attempts: [
           {
-            status: 'success',/* optional*/
-            dateAttemp: '2016-05-05'/* optional*/
+            status: 'success',// optional
+            dateAttemp: '2016-05-05'// optional
           }
         ],
         processingFees: {
