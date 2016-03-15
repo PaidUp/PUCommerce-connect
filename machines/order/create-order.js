@@ -29,6 +29,11 @@ module.exports = {
       example : 'userId',
       description : 'userId to own order.',
       required : true
+    },
+    paymentsPlan : {
+      example : '*',
+      description : 'paymentsPlan to own order.',
+      required : false
     }
   },
 
@@ -67,7 +72,10 @@ module.exports = {
       method: 'post',
       token : inputs.token
     }
-    let body = {userId: inputs.userId};
+    let body = {
+      userId: inputs.userId,
+      paymentsPlan : inputs.paymentsPlan || []
+    };
     //Connector.request(config, params, body, cb)
     Connector.request(config, {}, body, function(err, resp){
       if(err && err.message.statusCode === 'notAvailable'){
@@ -81,8 +89,6 @@ module.exports = {
           message: err.body
         });
       }else{
-        console.log('resp.body',resp.body);
-
         return exits.success({
           status : resp.status,
           body : resp.body

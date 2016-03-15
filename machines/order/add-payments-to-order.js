@@ -21,7 +21,7 @@ module.exports = {
       description: '',
       required: true
     },
-    payments: {
+    paymentsPlan: {
       example: [{
         destinationId: 'destinationId',
         dateCharge: '2016-05-05',
@@ -32,12 +32,6 @@ module.exports = {
         discountCode: 'discountCode', // optional
         wasProcessed: false,// optional default false
         status: 'pending',// optional default pending
-        attempts: [
-          {
-            status: 'success',// optional
-            dateAttemp: '2016-05-05'// optional
-          }
-        ],
         processingFees: {
           cardFee: 12,
           cardFeeActual: 21,
@@ -150,7 +144,7 @@ module.exports = {
     var Connector = require('../../core/common/connector')
 
     var config = {
-      url: '/api/v2/commerce/order/add-payments',
+      url: '/api/v2/commerce/order/add-payments',//create
       baseUrl: inputs.baseUrl,
       method: 'post',
       token: inputs.token
@@ -158,12 +152,10 @@ module.exports = {
 
     let body = {
       orderId: inputs.orderId,
-      payments: inputs.payments
+      paymentsPlan: inputs.paymentsPlan
     }
 
     Connector.request(config, {}, body, function (err, resp) {
-      console.log('err', err)
-      console.log('resp.body', resp.body)
       if (err) {
         return exits.error({
           status: err.status,
