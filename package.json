@@ -40,7 +40,8 @@
       "create-coupon",
       "redeem-coupon",
       "update-coupon",
-      "order/create-order"
+      "order/create-order",
+      "order/add-payments-to-order"
     ]
   },
   "repository": {

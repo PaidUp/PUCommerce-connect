@@ -31,6 +31,13 @@ $ npm test
 
 ##Exec
 
+### order
+```sh
+$ mp exec order/create-order
+
+$ mp exec order/add-payments-to-order
+```
+
 ### coupon
 ```sh
 $ mp exec create-coupon
