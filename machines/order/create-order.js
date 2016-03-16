@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
 
 
@@ -72,7 +70,7 @@ module.exports = {
       method: 'post',
       token : inputs.token
     }
-    let body = {
+    var body = {
       userId: inputs.userId,
       paymentsPlan : inputs.paymentsPlan || []
     };

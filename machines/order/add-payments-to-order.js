@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   friendlyName: 'create order',
   description: 'create a order',
@@ -150,7 +148,7 @@ module.exports = {
       token: inputs.token
     }
 
-    let body = {
+    var body = {
       orderId: inputs.orderId,
       paymentsPlan: inputs.paymentsPlan
     }
