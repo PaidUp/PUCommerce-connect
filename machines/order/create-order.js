@@ -1,7 +1,6 @@
 'use strict';
-
+const paymentPlan = require('../../core/common/objects/paymentPlan')
 module.exports = {
-
 
   friendlyName: 'create order',
 
@@ -31,7 +30,7 @@ module.exports = {
       required : true
     },
     paymentsPlan : {
-      example : '*',
+      example : [paymentPlan],
       description : 'paymentsPlan to own order.',
       required : true
     }
