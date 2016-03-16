@@ -1,10 +1,11 @@
+var paymentPlan = require('../core/common/objects/paymentPlan')
+
 module.exports = {
 
+  friendlyName: 'Order Create',
 
-  friendlyName: 'Redeem Coupon',
 
-
-  description: 'Redeem a coupon discount',
+  description: 'Create a order',
 
 
   cacheable: false,
@@ -23,30 +24,29 @@ module.exports = {
       description : 'secret word for authenticate microservice.',
       required : true
     },
-    coupon : {
-      example: 'NEWDISCOUNTCOUPON',
-      description : 'It is a object that contain the key value to filters the coupons',
+    userId : {
+      example : 'userId',
+      description : 'userId to own order.',
       required : true
     },
-    productId : {
-      example: 'Id1',
-      description : 'It is a object that contain the key value to filters the list coupons. if you want a complete list os coupon send a empty object {}',
+    paymentsPlan : {
+      example : [paymentPlan],
+      description : 'paymentsPlan to own order.',
       required : true
     }
-
   },
-
 
   exits: {
 
     success: {
-      friendlyName: 'then',
-      description: 'Object with id coupon and discount percent',
+      friendlyName: 'order created',
+      description: 'oder created',
       example: {
         status: 200,
         body : {
-          _id: 'NEWDISCOUNTCOUPON',
-          percent: 10
+          _id: 'IdOrder',
+          status: 'pending',
+          paymentsPlan: []
         }
       }
     },
@@ -56,13 +56,6 @@ module.exports = {
         status: 500,
         message : '[{"maybe some JSON": "like this"}]  (but could be any string)'
       }
-    },
-    notAvailable: {
-      description: 'Currently coupon is not available',
-      example: {
-        status: 400,
-        message: 'this coupon is not available'
-      }
     }
   },
 
@@ -70,20 +63,19 @@ module.exports = {
   fn: function(inputs, exits
     /**/
   ) {
-    var Connector  = require('../core/common/connector');
+    var Connector  = require('../../core/common/connector');
 
     var config = {
-      url: '/api/v1/commerce/coupon/redeem',
+      url: '/api/v2/commerce/order/create',
       baseUrl: inputs.baseUrl,
       method: 'post',
       token : inputs.token
     }
-
     var body = {
-      coupon: inputs.coupon,
-      productId: inputs.productId
-    }
-
+      userId: inputs.userId,
+      paymentsPlan : inputs.paymentsPlan || []
+    };
+    //Connector.request(config, params, body, cb)
     Connector.request(config, {}, body, function(err, resp){
       if(err && err.message.statusCode === 'notAvailable'){
         return exits.notAvailable({
@@ -96,8 +88,6 @@ module.exports = {
           message: err.body
         });
       }else{
-        console.log('resp.body',resp.body);
-
         return exits.success({
           status : resp.status,
           body : resp.body

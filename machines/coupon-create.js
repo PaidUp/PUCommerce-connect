@@ -1,5 +1,5 @@
 module.exports = {
-    friendlyName: 'Create Coupon',
+    friendlyName: 'Coupon Create',
     description: 'Create a discount coupon',
     cacheable: false,
     sync: false,

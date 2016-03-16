@@ -36,12 +36,12 @@
     "friendlyName": "PUCommerceConnect",
     "machineDir": "machines/",
     "machines": [
-      "get-coupon",
-      "create-coupon",
-      "redeem-coupon",
-      "update-coupon",
-      "order/create-order",
-      "order/add-payments-to-order"
+      "coupon-get",
+      "coupon-create",
+      "coupon-redeem",
+      "coupon-update",
+      "order-create",
+      "order-add-payments"
     ]
   },
   "repository": {

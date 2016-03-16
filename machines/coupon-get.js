@@ -1,5 +1,5 @@
 module.exports = {
-  friendlyName: 'Get Coupon',
+  friendlyName: 'Coupon Get',
   description: 'get a list of discont coupon',
   cacheable: false,
   sync: false,

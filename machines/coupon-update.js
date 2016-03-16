@@ -1,7 +1,7 @@
 module.exports = {
 
 
-  friendlyName: 'Update Coupon',
+  friendlyName: 'Coupon-Update',
 
 
   description: 'Update a coupon discount',

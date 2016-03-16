@@ -1,6 +1,6 @@
 module.exports = {
-  friendlyName: 'create order',
-  description: 'create a order',
+  friendlyName: 'Order Add Payments',
+  description: 'Add dues to order',
   cacheable: false,
   sync: false,
   inputs: {
