@@ -33,7 +33,7 @@ module.exports = {
     paymentsPlan : {
       example : '*',
       description : 'paymentsPlan to own order.',
-      required : false
+      required : true
     }
   },
 
