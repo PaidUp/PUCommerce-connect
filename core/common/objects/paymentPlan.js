@@ -1,5 +1,3 @@
-'user strict'
-
 module.exports = {
   destinationId: 'destinationId',
   dateCharge: '2016-05-05',
