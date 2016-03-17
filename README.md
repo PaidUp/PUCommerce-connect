@@ -33,20 +33,22 @@ $ npm test
 
 ### order
 ```sh
-$ mp exec order/create-order
+$ mp exec order-create
 
-$ mp exec order/add-payments-to-order
+$ mp exec order-add-payments
+
+$ mp exec order-update-payments
 ```
 
 ### coupon
 ```sh
-$ mp exec create-coupon
+$ mp exec coupon-create
 
-$ mp exec get-coupon
+$ mp exec coupon-get
 
-$ mp exec redeem-coupon
+$ mp exec coupon-redeem
 
-$ mp exec update-coupon
+$ mp exec coupon-update
 ```
 
 ## Usage

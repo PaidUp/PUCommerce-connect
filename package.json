@@ -41,7 +41,8 @@
       "coupon-redeem",
       "coupon-update",
       "order-create",
-      "order-add-payments"
+      "order-add-payments",
+      "order-update-payments"
     ]
   },
   "repository": {
