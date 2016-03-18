@@ -24,7 +24,7 @@ module.exports = {
       description: 'payment Id',
       required: true
     },
-    paymentsPlan: {
+    paymentPlan: {
       example: {
         destinationId: 'destinationId',
         dateCharge: '2016-05-05',
@@ -44,29 +44,9 @@ module.exports = {
           achFeeActual: 21,
           achFeeFlat: 12,
           achFeeFlatActual: 21
-        },
-        collectionsFee: {
-          fee: 12,
-          feeFlat: 21
-        },
-        paysFees: {
-          processing: true,
-          collections: true
-        },
-        productInfo: {
-          productId: 'productId',
-          productName: 'productName'
-        },
-        userInfo: {
-          userId: 'UserId',
-          userName: 'userName'
-        },
-        beneficiaryInfo: {
-          beneficiaryId: 'beneficiaryId',
-          beneficiaryName: 'beneficiaryName'
         }
       },
-      description: 'array of payments plan',
+      description: 'object of payments plan',
       required: true
     }
   },
@@ -142,10 +122,10 @@ module.exports = {
   fn: function (inputs, exits
   /**/
   ) {
-    var Connector = require('../../core/common/connector')
+    var Connector = require('../core/common/connector')
 
     var config = {
-      url: '/api/v2/commerce/order/add-payments', // create
+      url: '/api/v2/commerce/order/update-payments',
       baseUrl: inputs.baseUrl,
       method: 'post',
       token: inputs.token
@@ -153,7 +133,8 @@ module.exports = {
 
     var body = {
       orderId: inputs.orderId,
-      paymentsPlan: inputs.paymentsPlan
+      paymentPlanId: inputs.paymentPlanId,
+      paymentPlan: inputs.paymentPlan
     }
 
     Connector.request(config, {}, body, function (err, resp) {

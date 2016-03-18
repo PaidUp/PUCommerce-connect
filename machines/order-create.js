@@ -1,34 +1,30 @@
 module.exports = {
-
   friendlyName: 'Order Create',
-
 
   description: 'Create a order',
 
-
   cacheable: false,
-
 
   sync: false,
 
   inputs: {
-    baseUrl : {
-      example : 'http://localhost:9002',
-      description : 'Url microservice.',
-      required : true
+    baseUrl: {
+      example: 'http://localhost:9002',
+      description: 'Url microservice.',
+      required: true
     },
-    token : {
-      example : 'secret-word',
-      description : 'secret word for authenticate microservice.',
-      required : true
+    token: {
+      example: 'secret-word',
+      description: 'secret word for authenticate microservice.',
+      required: true
     },
-    userId : {
-      example : 'userId',
-      description : 'userId to own order.',
-      required : true
+    userId: {
+      example: 'userId',
+      description: 'userId to own order.',
+      required: true
     },
-    paymentsPlan : {
-      example : [{
+    paymentsPlan: {
+      example: [{
         destinationId: 'destinationId',
         dateCharge: '2016-05-05',
         price: 100,
@@ -36,8 +32,8 @@ module.exports = {
         account: 'account',
         discount: 0, // optional default 0
         discountCode: 'discountCode', // optional
-        wasProcessed: false,// optional default false
-        status: 'pending',// optional default pending
+        wasProcessed: false, // optional default false
+        status: 'pending', // optional default pending
         processingFees: {
           cardFee: 12,
           cardFeeActual: 21,
@@ -69,19 +65,18 @@ module.exports = {
           beneficiaryName: 'beneficiaryName'
         }
       }],
-      description : 'paymentsPlan to own order.',
-      required : true
+      description: 'paymentsPlan to own order.',
+      required: true
     }
   },
 
   exits: {
-
     success: {
       friendlyName: 'order created',
       description: 'oder created',
       example: {
         status: 200,
-        body : {
+        body: {
           _id: 'IdOrder',
           status: 'pending',
           paymentsPlan: []
@@ -92,45 +87,45 @@ module.exports = {
       description: 'error unexpected',
       example: {
         status: 500,
-        message : '[{"maybe some JSON": "like this"}]  (but could be any string)'
+        message: '[{"maybe some JSON": "like this"}]  (but could be any string)'
       }
     }
   },
 
-
-  fn: function(inputs, exits
-    /**/
+  fn: function (inputs, exits
+  /**/
   ) {
-    var Connector  = require('../../core/common/connector');
-
+    var Connector = require('../core/common/connector')
     var config = {
       url: '/api/v2/commerce/order/create',
       baseUrl: inputs.baseUrl,
       method: 'post',
-      token : inputs.token
+      token: inputs.token
     }
     var body = {
       userId: inputs.userId,
-      paymentsPlan : inputs.paymentsPlan || []
-    };
-    //Connector.request(config, params, body, cb)
-    Connector.request(config, {}, body, function(err, resp){
-      if(err && err.message.statusCode === 'notAvailable'){
+      paymentsPlan: inputs.paymentsPlan || []
+    }
+    // Connector.request(config, params, body, cb)
+    Connector.request(config, {}, body, function (err, resp) {
+      console.log('err', err)
+      console.log('resp', resp)
+      if (err && err.message.statusCode === 'notAvailable') {
         return exits.notAvailable({
           status: err.status,
           message: err.message.message
-        });
-      }else if(err){
+        })
+      }else if (err) {
         return exits.error({
           status: err.status,
           message: err.body
-        });
-      }else{
+        })
+      } else {
         return exits.success({
-          status : resp.status,
-          body : resp.body
-        });
+          status: resp.status,
+          body: resp.body
+        })
       }
-    });
+    })
   },
-};
+}

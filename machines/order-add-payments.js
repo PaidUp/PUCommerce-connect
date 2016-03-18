@@ -28,8 +28,8 @@ module.exports = {
         account: 'account',
         discount: 0, // optional default 0
         discountCode: 'discountCode', // optional
-        wasProcessed: false,// optional default false
-        status: 'pending',// optional default pending
+        wasProcessed: false, // optional default false
+        status: 'pending', // optional default pending
         processingFees: {
           cardFee: 12,
           cardFeeActual: 21,
@@ -67,7 +67,6 @@ module.exports = {
   },
 
   exits: {
-
     success: {
       friendlyName: 'order created with payments',
       description: 'oder created',
@@ -135,14 +134,13 @@ module.exports = {
     }
   },
 
-
   fn: function (inputs, exits
-    /**/
+  /**/
   ) {
-    var Connector = require('../../core/common/connector')
+    var Connector = require('../core/common/connector')
 
     var config = {
-      url: '/api/v2/commerce/order/add-payments',//create
+      url: '/api/v2/commerce/order/add-payments',
       baseUrl: inputs.baseUrl,
       method: 'post',
       token: inputs.token
