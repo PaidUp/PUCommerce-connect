@@ -34,6 +34,7 @@ module.exports = {
         discountCode: 'discountCode', // optional
         wasProcessed: false, // optional default false
         status: 'pending', // optional default pending
+        description: 'some description',
         processingFees: {
           cardFee: 12,
           cardFeeActual: 21,
