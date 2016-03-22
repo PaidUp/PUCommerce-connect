@@ -118,7 +118,7 @@ module.exports = {
       }else if (err) {
         return exits.error({
           status: err.status,
-          message: err.body
+          message: err.message || err.body
         })
       } else {
         return exits.success({
