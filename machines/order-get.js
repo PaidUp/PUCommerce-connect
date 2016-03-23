@@ -103,8 +103,6 @@ module.exports = {
     var body = inputs.filter
 
     Connector.request(config, {}, body, function (err, resp) {
-      console.log('err', err)
-      console.log('resp', resp)
       if (err) {
         return exits.error({
           status: err.status,
