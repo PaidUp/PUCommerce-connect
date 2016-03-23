@@ -33,6 +33,9 @@ module.exports = {
               status: 'processing',
               paymentsPlan: [{
                 destinationId: 'destinationId',
+                _id: '_idpp',
+                description: 'some description',
+                email: 'email@email.com',
                 dateCharge: '2016-05-05',
                 price: 100,
                 typeAccount: 'typeAccount',
