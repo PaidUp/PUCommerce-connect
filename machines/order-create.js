@@ -26,6 +26,7 @@ module.exports = {
     paymentsPlan: {
       example: [{
         destinationId: 'destinationId',
+        email: 'some@email.com',
         dateCharge: '2016-05-05',
         price: 100,
         paymentId: 'paymentId',
