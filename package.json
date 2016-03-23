@@ -1,6 +1,6 @@
 {
   "name": "pu-commerce-connect",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "description": "Connector for TDCommerce",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js",
