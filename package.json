@@ -1,6 +1,6 @@
 {
   "name": "pu-commerce-connect",
-  "version": "0.3.12",
+  "version": "0.4.0",
   "description": "Connector for TDCommerce",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js",
@@ -43,7 +43,8 @@
       "order-create",
       "order-add-payments",
       "order-update-payments",
-      "order-get"
+      "order-get",
+      "order-get-to-charge"
     ]
   },
   "repository": {

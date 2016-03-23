@@ -1,6 +1,6 @@
 module.exports = {
-  friendlyName: 'get orders',
-  description: 'get orders',
+  friendlyName: 'get orders to charge',
+  description: 'get orders to charge (cronjob)',
   cacheable: false,
   sync: false,
   inputs: {
@@ -12,11 +12,6 @@ module.exports = {
     token: {
       example: 'secret-word',
       description: 'secret word for authenticate microservice.',
-      required: true
-    },
-    filter: {
-      example: '*',
-      description: 'filter to retrieve orders',
       required: true
     }
   },
@@ -98,7 +93,7 @@ module.exports = {
     var Connector = require('../core/common/connector')
 
     var config = {
-      url: '/api/v2/commerce/order/list',
+      url: '/api/v2/commerce/order/cronjob',
       baseUrl: inputs.baseUrl,
       method: 'post',
       token: inputs.token
@@ -107,6 +102,8 @@ module.exports = {
     var body = inputs.filter
 
     Connector.request(config, {}, body, function (err, resp) {
+      console.log('err', err)
+      console.log('resp', resp)
       if (err) {
         return exits.error({
           status: err.status,
