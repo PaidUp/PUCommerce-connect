@@ -34,6 +34,7 @@ module.exports = {
         discountCode: 'discountCode', // optional
         wasProcessed: false, // optional default false
         status: 'pending', // optional default pending
+        description: 'some description',
         processingFees: {
           cardFee: 12,
           cardFeeActual: 21,
@@ -108,8 +109,6 @@ module.exports = {
     }
     // Connector.request(config, params, body, cb)
     Connector.request(config, {}, body, function (err, resp) {
-      console.log('err', err)
-      console.log('resp', resp)
       if (err && err.message.statusCode === 'notAvailable') {
         return exits.notAvailable({
           status: err.status,
@@ -118,7 +117,7 @@ module.exports = {
       }else if (err) {
         return exits.error({
           status: err.status,
-          message: err.body
+          message: JSON.stringify(err.message)
         })
       } else {
         return exits.success({
