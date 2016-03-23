@@ -99,9 +99,7 @@ module.exports = {
       token: inputs.token
     }
 
-    var body = inputs.filter
-
-    Connector.request(config, {}, body, function (err, resp) {
+    Connector.request(config, {}, {}, function (err, resp) {
       console.log('err', err)
       console.log('resp', resp)
       if (err) {
