@@ -28,6 +28,7 @@ module.exports = {
         destinationId: 'destinationId',
         dateCharge: '2016-05-05',
         price: 100,
+        paymentId: 'paymentId',
         typeAccount: 'typeAccount',
         account: 'account',
         discount: 0, // optional default 0
