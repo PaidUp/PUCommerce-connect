@@ -16,7 +16,7 @@ module.exports = {
     },
     orderId: {
       example: 'orderId',
-      description: '',
+      description: 'order that you want add payment.',
       required: true
     },
     paymentsPlan: {
@@ -69,7 +69,7 @@ module.exports = {
   exits: {
     success: {
       friendlyName: 'order created with payments',
-      description: 'oder created',
+      description: 'order created',
       example: {
         status: 200,
         body: {
