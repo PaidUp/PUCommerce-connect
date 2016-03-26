@@ -110,7 +110,7 @@ module.exports = {
       if (err) {
         return exits.error({
           status: err.status,
-          message: err.body
+          message: JSON.stringify(err.message)
         })
       } else {
         return exits.success({
