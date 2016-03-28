@@ -40,6 +40,7 @@ module.exports = {
                 discountCode: 'discountCode',
                 wasProcessed: false,
                 status: 'pending',
+                paymentId: 'paymentId',
                 attempts: [
                   {
                     status: 'success',
