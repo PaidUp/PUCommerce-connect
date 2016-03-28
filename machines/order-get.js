@@ -45,6 +45,9 @@ module.exports = {
                 discountCode: 'discountCode',
                 wasProcessed: false,
                 status: 'pending',
+                last4: '0000',
+                originalPrice: 90,
+                totalFee: 10,
                 attempts: [
                   {
                     status: 'success',

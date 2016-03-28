@@ -30,6 +30,9 @@ module.exports = {
         discountCode: 'discountCode', // optional
         wasProcessed: false, // optional default false
         status: 'pending', // optional default pending
+        last4: '0000',
+        originalPrice: 90,
+        totalFee: 10,
         processingFees: {
           cardFee: 12,
           cardFeeActual: 21,

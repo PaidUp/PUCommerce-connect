@@ -41,6 +41,9 @@ module.exports = {
                 wasProcessed: false,
                 status: 'pending',
                 paymentId: 'paymentId',
+                last4: '0000',
+                originalPrice: 90,
+                totalFee: 10,
                 attempts: [
                   {
                     status: 'success',
