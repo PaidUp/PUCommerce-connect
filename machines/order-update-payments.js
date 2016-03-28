@@ -47,7 +47,8 @@ module.exports = {
           achFeeActual: 21,
           achFeeFlat: 12,
           achFeeFlatActual: 21
-        }
+        },
+        attempts: '*'
       },
       description: 'object of payments plan',
       required: true
