@@ -29,9 +29,12 @@ module.exports = {
         email: 'some@email.com',
         dateCharge: '2016-05-05',
         price: 100,
+        originalPrice: 90,
+        totalFee: 10,
         paymentId: 'paymentId',
         typeAccount: 'typeAccount',
         account: 'account',
+        last4: '0000',
         discount: 0, // optional default 0
         discountCode: 'discountCode', // optional
         wasProcessed: false, // optional default false
