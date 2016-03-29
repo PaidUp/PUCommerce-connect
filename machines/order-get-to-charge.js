@@ -36,6 +36,7 @@ module.exports = {
                 price: 100,
                 typeAccount: 'typeAccount',
                 account: 'account',
+                accountBrand: 'Diners Club',
                 discount: 0,
                 discountCode: 'discountCode',
                 wasProcessed: false,
