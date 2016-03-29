@@ -34,6 +34,7 @@ module.exports = {
         paymentId: 'paymentId',
         typeAccount: 'typeAccount',
         account: 'account',
+        accountBrand: 'Diners Club',
         last4: '0000',
         discount: 0, // optional default 0
         discountCode: 'discountCode', // optional
