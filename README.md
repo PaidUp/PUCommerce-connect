@@ -38,6 +38,12 @@ $ mp exec order-create
 $ mp exec order-add-payments
 
 $ mp exec order-update-payments
+
+$ mp exec order-get
+
+$ mp exec order-get-to-charge
+
+$ mp exec order-to-complete
 ```
 
 ### coupon
