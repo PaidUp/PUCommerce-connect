@@ -73,7 +73,7 @@ module.exports = {
       description: 'Some error',
       example: {
         status: 400,
-        message: '*'
+        message: 'this is a error message'
       }
     }
 
@@ -99,7 +99,6 @@ module.exports = {
     }
 
     Connector.request(config, {}, body, function (err, resp) {
-      console.log('err', err)
       if (err && err.status === 500) {
         return exits.error({
           status: err.status,
