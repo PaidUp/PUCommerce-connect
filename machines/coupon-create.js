@@ -68,6 +68,13 @@ module.exports = {
         status: 400,
         message: '[{"maybe some JSON": "like this"}]  (but could be any string)'
       }
+    },
+    validationError: {
+      description: 'Some error',
+      example: {
+        status: 400,
+        message: '*'
+      }
     }
 
   },
@@ -92,10 +99,16 @@ module.exports = {
     }
 
     Connector.request(config, {}, body, function (err, resp) {
-      if (err) {
+      console.log('err', err)
+      if (err && err.status === 500) {
         return exits.error({
           status: err.status,
-          message: err.body
+          message: err.message
+        })
+      } else if (err && err.status === 400) {
+        return exits.validationError({
+          status: err.status,
+          message: err.message.err.message || err.message.err.errmsg
         })
       } else {
         return exits.success({
