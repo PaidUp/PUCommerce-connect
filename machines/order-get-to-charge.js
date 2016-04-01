@@ -71,7 +71,11 @@ module.exports = {
                 },
                 productInfo: {
                   productId: 'productId',
-                  productName: 'productName'
+                  productName: 'productName',productImage: 'someUrl',
+                  organizationId: 'organizationId',
+                  organizationName: 'organization name',
+                  organizationLocation: 'Austin, TX',
+                  organizationImage: 'someUrl'
                 },
                 userInfo: {
                   userId: 'UserId',
