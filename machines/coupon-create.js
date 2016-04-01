@@ -73,7 +73,7 @@ module.exports = {
       description: 'Some error',
       example: {
         status: 400,
-        message: '*'
+        message: 'this is a error message'
       }
     }
 
