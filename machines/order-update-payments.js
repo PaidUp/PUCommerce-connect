@@ -27,6 +27,8 @@ module.exports = {
     paymentPlan: {
       example: {
         destinationId: 'destinationId',
+        description: 'some description',
+        email: 'email@email.com',
         dateCharge: '2016-05-05',
         price: 100,
         typeAccount: 'typeAccount',
@@ -39,6 +41,8 @@ module.exports = {
         last4: '0000',
         originalPrice: 90,
         totalFee: 10,
+        feePaidUp: 4.2,
+        feeStripe: 3.6,
         processingFees: {
           cardFee: 12,
           cardFeeActual: 21,
@@ -67,6 +71,8 @@ module.exports = {
           status: 'processing',
           paymentsPlan: [{
             destinationId: 'destinationId',
+            description: 'some description',
+            email: 'email@email.com',
             dateCharge: '2016-05-05',
             price: 100,
             typeAccount: 'typeAccount',
@@ -76,6 +82,11 @@ module.exports = {
             discountCode: 'discountCode',
             wasProcessed: false,
             status: 'pending',
+            last4: '0000',
+            originalPrice: 90,
+            totalFee: 10,
+            feePaidUp: 4.2,
+            feeStripe: 3.6,
             attempts: [
               {
                 status: 'success',

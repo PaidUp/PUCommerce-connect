@@ -33,6 +33,8 @@ module.exports = {
         last4: '0000',
         originalPrice: 90,
         totalFee: 10,
+        feePaidUp: 4.2,
+        feeStripe: 3.6,
         processingFees: {
           cardFee: 12,
           cardFeeActual: 21,
@@ -89,10 +91,15 @@ module.exports = {
             price: 100,
             typeAccount: 'typeAccount',
             account: 'account',
-            discount: 0,
-            discountCode: 'discountCode',
-            wasProcessed: false,
-            status: 'pending',
+            discount: 0, // optional default 0
+            discountCode: 'discountCode', // optional
+            wasProcessed: false, // optional default false
+            status: 'pending', // optional default pending
+            last4: '0000',
+            originalPrice: 90,
+            totalFee: 10,
+            feePaidUp: 4.2,
+            feeStripe: 3.6,
             attempts: [
               {
                 status: 'success',
