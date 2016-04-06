@@ -27,10 +27,10 @@ module.exports = {
             {_id: 'IdOrder',
               status: 'processing',
               userId: 'userId',
+              orderId:'orderId',
               paymentsPlan: [{
                 destinationId: 'destinationId',
                 _id: '_idpp',
-                orderId:'orderId',
                 description: 'some description',
                 email: 'email@email.com',
                 dateCharge: '2016-05-05',
