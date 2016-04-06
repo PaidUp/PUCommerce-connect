@@ -30,6 +30,7 @@ module.exports = {
         body: {
           orders: [
             {_id: 'IdOrder',
+              orderId:'orderId',
               status: 'processing',
               userId: 'userId',
               paymentsPlan: [{

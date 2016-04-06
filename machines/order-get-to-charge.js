@@ -30,6 +30,7 @@ module.exports = {
               paymentsPlan: [{
                 destinationId: 'destinationId',
                 _id: '_idpp',
+                orderId:'orderId',
                 description: 'some description',
                 email: 'email@email.com',
                 dateCharge: '2016-05-05',

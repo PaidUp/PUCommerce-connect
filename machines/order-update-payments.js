@@ -68,6 +68,7 @@ module.exports = {
         status: 200,
         body: {
           _id: 'IdOrder',
+          orderId:'orderId',
           status: 'processing',
           paymentsPlan: [{
             destinationId: 'destinationId',
