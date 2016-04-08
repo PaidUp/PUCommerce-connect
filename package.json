@@ -1,7 +1,7 @@
 {
-  "name": "pu-commerce-connect",
+  "name": "paidup-commerce-connect",
   "version": "0.4.19",
-  "description": "Connector for TDCommerce",
+  "description": "Connector for PaidUp Microservice Commerce",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js",
     "test-o": "npm run lint && npm run test-ci && npm run test-browser",
