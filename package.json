@@ -33,7 +33,7 @@
     "tape": "^4.5.1"
   },
   "machinepack": {
-    "friendlyName": "PUCommerceConnect",
+    "friendlyName": "PaidUp Commerce Connect",
     "machineDir": "machines/",
     "machines": [
       "coupon-get",
