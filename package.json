@@ -33,7 +33,7 @@
     "tape": "^4.5.1"
   },
   "machinepack": {
-    "friendlyName": "PaidUp Commerce Connect",
+    "friendlyName": "PaidUp-Commerce-Connect",
     "machineDir": "machines/",
     "machines": [
       "coupon-get",
@@ -46,7 +46,8 @@
       "order-get",
       "order-get-to-charge",
       "order-to-complete"
-    ]
+    ],
+    "iconSrc": "https://getpaidup.com/favicon.ico"
   },
   "repository": {
     "type": "git",
