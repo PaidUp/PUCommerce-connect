@@ -43,7 +43,7 @@ module.exports = {
                 price: 100,
                 status: 'pending',
                 updatedAt: '2016-08-08',
-                urlImage: '2016-08-08',
+                urlImage: 'http://urlImage',
                 productInfo: {
                   productName: 'productName'
                 },
@@ -67,7 +67,7 @@ module.exports = {
     // var Connector = require('../core/common/connector')
 
     // var config = {
-    // url: '/api/v2/commerce/order/list',
+    // url: '/api/v2/commerce/order/recent',
     // baseUrl: inputs.baseUrl,
     // method: 'post',
     // token: inputs.token
