@@ -75,7 +75,6 @@ module.exports = {
     // }
 
     var body = inputs
-    console.log('body', body)
 
     return exits.success({
       status: 200,

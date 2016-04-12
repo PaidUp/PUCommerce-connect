@@ -44,6 +44,7 @@
       "order-add-payments",
       "order-update-payments",
       "order-get",
+      "order-active",
       "order-get-to-charge",
       "order-to-complete",
       "order-payment-recent",
