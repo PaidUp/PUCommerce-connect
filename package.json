@@ -46,7 +46,8 @@
       "order-get",
       "order-get-to-charge",
       "order-to-complete",
-      "order-payment-recent"
+      "order-payment-recent",
+      "order-search"
     ],
     "iconSrc": "https://getpaidup.com/favicon.ico"
   },
