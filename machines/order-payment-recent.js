@@ -14,11 +14,6 @@ module.exports = {
       description: 'secret word for authenticate microservice.',
       required: true
     },
-    status: {
-      example: '!pending',
-      description: 'status to filter to retrieve a order',
-      required: true
-    },
     userId: {
       example: 'userId',
       description: 'owner order to retrieve',
