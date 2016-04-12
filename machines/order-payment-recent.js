@@ -41,15 +41,26 @@ module.exports = {
                 _id: '_idpp',
                 dateCharge: '2016-05-05',
                 price: 100,
-                status: 'pending',
+                status: 'succeeded',
                 updatedAt: '2016-08-08',
                 urlImage: 'http://urlImage',
+                description: 'some description',
                 productInfo: {
-                  productName: 'productName'
+                  productName: 'productName',
+                  city: 'Auxtin',
+                  state: 'Texas'
                 },
                 beneficiaryInfo: {
                   beneficiaryName: 'beneficiaryName'
-                }
+                },
+                attempts: [
+                  {
+                    status: 'failed',
+                    dateAttemp: '2016-05-04',
+                    last4: '1234',
+                    accountBrand: 'american express'
+                  }
+                ]
               }]
             }]
       }}
@@ -91,12 +102,23 @@ module.exports = {
                 'status': 'succeeded',
                 'updatedAt': '2016-03-25',
                 'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
+                'description': 'some description1',
                 'productInfo': {
-                  'productName': 'PaidUpteam'
+                  'productName': 'PaidUpteam',
+                  'city': 'Auxtin',
+                  'state': 'Texas'
                 },
                 'beneficiaryInfo': {
                   'beneficiaryName': 'JhonDoe'
-                }
+                },
+                'attempts': [
+                  {
+                    'status': 'succeeded',
+                    'dateAttemp': '2016-03-25',
+                    'last4': '1234',
+                    'accountBrand': 'american express'
+                  }
+                ]
               }
             ]
           },
@@ -112,12 +134,23 @@ module.exports = {
                 'status': 'succeeded',
                 'updatedAt': '2016-02-25',
                 'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
+                'description': 'some description2',
                 'productInfo': {
-                  'productName': 'PaidUpteam'
+                  'productName': 'PaidUpteam',
+                  'city': 'Auxtin',
+                  'state': 'Texas'
                 },
                 'beneficiaryInfo': {
                   'beneficiaryName': 'JhonDoe'
-                }
+                },
+                'attempts': [
+                  {
+                    'status': 'succeeded',
+                    'dateAttemp': '2016-02-25',
+                    'last4': '1234',
+                    'accountBrand': 'american express'
+                  }
+                ]
               }
             ]
           },
@@ -133,12 +166,23 @@ module.exports = {
                 'status': 'succeeded',
                 'updatedAt': '2016-01-25',
                 'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
+                'description': 'some description3',
                 'productInfo': {
-                  'productName': 'PaidUpteam'
+                  'productName': 'PaidUpteam',
+                  'city': 'Auxtin',
+                  'state': 'Texas'
                 },
                 'beneficiaryInfo': {
                   'beneficiaryName': 'JhonDoe'
-                }
+                },
+                'attempts': [
+                  {
+                    'status': 'succeeded',
+                    'dateAttemp': '2016-01-24',
+                    'last4': '1234',
+                    'accountBrand': 'american express'
+                  }
+                ]
               }
             ]
           },
@@ -154,12 +198,23 @@ module.exports = {
                 'status': 'succeeded',
                 'updatedAt': '2016-01-20',
                 'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/message.png',
+                'description': 'some description4',
                 'productInfo': {
-                  'productName': 'Avengerteam'
+                  'productName': 'Avengerteam',
+                  'city': 'New york city',
+                  'state': 'New york'
                 },
                 'beneficiaryInfo': {
                   'beneficiaryName': 'IronMan'
-                }
+                },
+                'attempts': [
+                  {
+                    'status': 'succeeded',
+                    'dateAttemp': '2016-01-20',
+                    'last4': '1234',
+                    'accountBrand': 'american express'
+                  }
+                ]
               }
             ]
           },
@@ -175,12 +230,23 @@ module.exports = {
                 'status': 'failed',
                 'updatedAt': '2015-12-25',
                 'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
+                'description': 'some description5',
                 'productInfo': {
-                  'productName': 'PaidUpteam'
+                  'productName': 'PaidUpteam',
+                  'city': 'Auxtin',
+                  'state': 'Texas'
                 },
                 'beneficiaryInfo': {
                   'beneficiaryName': 'JhonDoe'
-                }
+                },
+                'attempts': [
+                  {
+                    'status': 'failed',
+                    'dateAttemp': '2015-12-25',
+                    'last4': '1234',
+                    'accountBrand': 'american express'
+                  }
+                ]
               }
             ]
           }
