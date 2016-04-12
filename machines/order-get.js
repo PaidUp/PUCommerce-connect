@@ -14,9 +14,19 @@ module.exports = {
       description: 'secret word for authenticate microservice.',
       required: true
     },
-    filter: {
-      example: '*',
-      description: 'filter to retrieve orders',
+    orderId: {
+      example: 'orderId',
+      description: 'orderId filter to retrieve orders',
+      required: false
+    },
+    userId: {
+      example: 'userId',
+      description: 'owner order to retrieve',
+      required: false
+    },
+    limit: {
+      example: 5,
+      description: 'quantity order to retrieve',
       required: true
     }
   },
@@ -30,7 +40,7 @@ module.exports = {
         body: {
           orders: [
             {_id: 'IdOrder',
-              orderId:'orderId',
+              orderId: 'orderId',
               status: 'processing',
               userId: 'userId',
               paymentsPlan: [{
