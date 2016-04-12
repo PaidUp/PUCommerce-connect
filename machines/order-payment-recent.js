@@ -84,28 +84,114 @@ module.exports = {
     return exits.success({
       status: 200,
       body: {
-        orders: [{
-          _id: 'IdOrder',
-          orderId: 'orderId',
-          orderId: '1000A1',
-          userId: 'userId',
-          paymentsPlan: [{
-            _id: '_idpp',
-            dateCharge: '2016-05-05',
-            price: 100,
-            status: 'pending',
-            updatedAt: '2016-08-08',
-            urlImage: '2016-08-08',
-            productInfo: {
-              productName: 'productName'
-            },
-            beneficiaryInfo: {
-              beneficiaryName: 'beneficiaryName'
-            }
-          }]
-        }]
-      }
-    })
+        'orders': [
+          {
+            '_id': 'IdOrder1',
+            'orderId': '1000A1',
+            'userId': 'userId',
+            'paymentsPlan': [
+              {
+                '_id': '_idpp1',
+                'dateCharge': '2016-03-25',
+                'price': 100,
+                'status': 'succeeded',
+                'updatedAt': '2016-03-25',
+                'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
+                'productInfo': {
+                  'productName': 'PaidUpteam'
+                },
+                'beneficiaryInfo': {
+                  'beneficiaryName': 'JhonDoe'
+                }
+              }
+            ]
+          },
+          {
+            '_id': 'IdOrder2',
+            'orderId': '1000A2',
+            'userId': 'userId',
+            'paymentsPlan': [
+              {
+                '_id': '_idpp2',
+                'dateCharge': '2016-02-25',
+                'price': 100,
+                'status': 'succeeded',
+                'updatedAt': '2016-02-25',
+                'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
+                'productInfo': {
+                  'productName': 'PaidUpteam'
+                },
+                'beneficiaryInfo': {
+                  'beneficiaryName': 'JhonDoe'
+                }
+              }
+            ]
+          },
+          {
+            '_id': 'IdOrder3',
+            'orderId': '1000A3',
+            'userId': 'userId',
+            'paymentsPlan': [
+              {
+                '_id': '_idpp3',
+                'dateCharge': '2016-01-05',
+                'price': 100,
+                'status': 'succeeded',
+                'updatedAt': '2016-01-25',
+                'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
+                'productInfo': {
+                  'productName': 'PaidUpteam'
+                },
+                'beneficiaryInfo': {
+                  'beneficiaryName': 'JhonDoe'
+                }
+              }
+            ]
+          },
+          {
+            '_id': 'IdOrder4',
+            'orderId': '1000A4',
+            'userId': 'userId',
+            'paymentsPlan': [
+              {
+                '_id': '_idpp4',
+                'dateCharge': '2016-01-20',
+                'price': 500,
+                'status': 'succeeded',
+                'updatedAt': '2016-01-20',
+                'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/message.png',
+                'productInfo': {
+                  'productName': 'Avengerteam'
+                },
+                'beneficiaryInfo': {
+                  'beneficiaryName': 'IronMan'
+                }
+              }
+            ]
+          },
+          {
+            '_id': 'IdOrder5',
+            'orderId': '1000A5',
+            'userId': 'userId',
+            'paymentsPlan': [
+              {
+                '_id': '_idpp5',
+                'dateCharge': '2015-12-25',
+                'price': 100,
+                'status': 'failed',
+                'updatedAt': '2015-12-25',
+                'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
+                'productInfo': {
+                  'productName': 'PaidUpteam'
+                },
+                'beneficiaryInfo': {
+                  'beneficiaryName': 'JhonDoe'
+                }
+              }
+            ]
+          }
+        ]
+    }})
 
   // Connector.request(config, {}, body, function (err, resp) {
   // if (err) {
