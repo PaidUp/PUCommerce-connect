@@ -68,7 +68,7 @@ module.exports = {
         status: 200,
         body: {
           _id: 'IdOrder',
-          orderId:'orderId',
+          orderId: 'orderId',
           status: 'processing',
           paymentsPlan: [{
             destinationId: 'destinationId',
@@ -93,7 +93,8 @@ module.exports = {
                 status: 'success',
                 dateAttemp: '2016-05-05',
                 last4: '1234',
-                accountBrand: 'american express'
+                accountBrand: 'american express',
+                transferId: 'tr_xxx'
               }
             ],
             processingFees: {

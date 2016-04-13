@@ -58,7 +58,8 @@ module.exports = {
                     status: 'failed',
                     dateAttemp: '2016-05-04',
                     last4: '1234',
-                    accountBrand: 'american express'
+                    accountBrand: 'american express',
+                    transferId: 'tr_xxx'
                   }
                 ]
               }]
@@ -116,7 +117,8 @@ module.exports = {
                     'status': 'succeeded',
                     'dateAttemp': '2016-03-25',
                     'last4': '1234',
-                    'accountBrand': 'american express'
+                    'accountBrand': 'american express',
+                    'transferId': 'tr_xxx1'
                   }
                 ]
               }
@@ -148,7 +150,8 @@ module.exports = {
                     'status': 'succeeded',
                     'dateAttemp': '2016-02-25',
                     'last4': '1234',
-                    'accountBrand': 'american express'
+                    'accountBrand': 'american express',
+                    'transferId': 'tr_xxx2'
                   }
                 ]
               }
@@ -180,7 +183,8 @@ module.exports = {
                     'status': 'succeeded',
                     'dateAttemp': '2016-01-24',
                     'last4': '1234',
-                    'accountBrand': 'american express'
+                    'accountBrand': 'american express',
+                    'transferId': 'tr_xxx3'
                   }
                 ]
               }
@@ -212,7 +216,8 @@ module.exports = {
                     'status': 'succeeded',
                     'dateAttemp': '2016-01-20',
                     'last4': '1234',
-                    'accountBrand': 'american express'
+                    'accountBrand': 'american express',
+                    'transferId': 'tr_xxx4'
                   }
                 ]
               }
@@ -244,7 +249,8 @@ module.exports = {
                     'status': 'failed',
                     'dateAttemp': '2015-12-25',
                     'last4': '1234',
-                    'accountBrand': 'american express'
+                    'accountBrand': 'american express',
+                    'transferId': 'tr_xxx5'
                   }
                 ]
               }

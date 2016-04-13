@@ -68,7 +68,8 @@ module.exports = {
                     status: 'success',
                     dateAttemp: '2016-05-05',
                     last4: '1234',
-                    accountBrand: 'american express'
+                    accountBrand: 'american express',
+                    transferId: 'tr_xxx'
                   }
                 ],
                 processingFees: {

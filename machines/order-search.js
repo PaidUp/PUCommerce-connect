@@ -30,10 +30,10 @@ module.exports = {
         body: {
           orders: [
             {_id: 'IdOrder',
-              orderId:'orderId',
+              orderId: 'orderId',
               status: 'processing',
               userId: 'userId',
-              createAt: "createAt",
+              createAt: 'createAt',
               paymentsPlan: [{
                 destinationId: 'destinationId',
                 _id: '_idpp',
@@ -58,7 +58,8 @@ module.exports = {
                     status: 'success',
                     dateAttemp: '2016-05-05',
                     last4: '1234',
-                    accountBrand: 'american express'
+                    accountBrand: 'american express',
+                    transferId: 'tr_xxx'
                   }
                 ],
                 processingFees: {
