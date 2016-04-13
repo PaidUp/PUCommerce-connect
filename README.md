@@ -41,13 +41,15 @@ $ mp exec order-update-payments
 
 $ mp exec order-get
 
+$ mp exec order-active
+
 $ mp exec order-get-to-charge
 
 $ mp exec order-to-complete
 
-$ mp exec order-payment-recent(TODO)
+$ mp exec order-payment-recent
 
-$ mp exec order-payment-next(TODO)
+$ mp exec order-payment-next
 ```
 
 ### coupon
