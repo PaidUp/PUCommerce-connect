@@ -43,6 +43,7 @@ module.exports = {
               orderId: 'orderId',
               status: 'processing',
               userId: 'userId',
+              totalPrice: 1000,
               paymentsPlan: [{
                 destinationId: 'destinationId',
                 _id: '_idpp',
