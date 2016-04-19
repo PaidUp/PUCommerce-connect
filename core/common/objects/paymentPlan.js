@@ -9,13 +9,13 @@ module.exports = {
   wasProcessed: false,// optional default false
   status: 'pending',// optional default pending
   processingFees: {
-    cardFee: 12,
+    cardFeeActual: 12,
     cardFeeDisplay: 21,
-    cardFeeFlat: 12,
+    cardFeeFlatActual: 12,
     cardFeeFlatDisplay: 21,
-    achFee: 12,
+    achFeeActual: 12,
     achFeeDisplay: 21,
-    achFeeFlat: 12,
+    achFeeFlatActual: 12,
     achFeeFlatDisplay: 21
   },
   collectionsFee: {
