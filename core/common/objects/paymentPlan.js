@@ -10,13 +10,13 @@ module.exports = {
   status: 'pending',// optional default pending
   processingFees: {
     cardFee: 12,
-    cardFeeActual: 21,
+    cardFeeDisplay: 21,
     cardFeeFlat: 12,
-    cardFeeFlatActual: 21,
+    cardFeeFlatDisplay: 21,
     achFee: 12,
-    achFeeActual: 21,
+    achFeeDisplay: 21,
     achFeeFlat: 12,
-    achFeeFlatActual: 21
+    achFeeFlatDisplay: 21
   },
   collectionsFee: {
     fee: 12,
