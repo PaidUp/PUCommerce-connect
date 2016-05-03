@@ -100,6 +100,7 @@ module.exports = {
             totalFee: 10,
             feePaidUp: 4.2,
             feeStripe: 3.6,
+            createAt:'2016-05-05',
             attempts: [
               {
                 status: 'success',
