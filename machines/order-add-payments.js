@@ -38,6 +38,7 @@ module.exports = {
         wasProcessed: false, // optional default false
         status: 'pending', // optional default pending
         description: 'some description',
+        paymentId: 'paymentId',
         processingFees: {
           cardFeeActual: 12,
           cardFeeDisplay: 21,
