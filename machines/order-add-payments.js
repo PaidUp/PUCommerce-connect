@@ -22,19 +22,23 @@ module.exports = {
     paymentsPlan: {
       example: [{
         destinationId: 'destinationId',
+        email: 'some@email.com',
         dateCharge: '2016-05-05',
         price: 100,
-        typeAccount: 'typeAccount',
-        account: 'account',
-        discount: 0, // optional default 0
-        discountCode: 'discountCode', // optional
-        wasProcessed: false, // optional default false
-        status: 'pending', // optional default pending
-        last4: '0000',
         originalPrice: 90,
         totalFee: 10,
         feePaidUp: 4.2,
         feeStripe: 3.6,
+        paymentId: 'paymentId',
+        typeAccount: 'typeAccount',
+        account: 'account',
+        accountBrand: 'Diners Club',
+        last4: '0000',
+        discount: 0, // optional default 0
+        discountCode: 'discountCode', // optional
+        wasProcessed: false, // optional default false
+        status: 'pending', // optional default pending
+        description: 'some description',
         processingFees: {
           cardFeeActual: 12,
           cardFeeDisplay: 21,
@@ -84,21 +88,25 @@ module.exports = {
         status: 200,
         body: {
           _id: 'IdOrder',
-          userId: 'userId',
           orderId: 'orderId',
           status: 'processing',
+          userId: 'userId',
           createAt:'2016-05-05',
           updateAt:'2016-05-05',
           paymentsPlan: [{
+            _id: 'someId',
             destinationId: 'destinationId',
+            description: 'some description',
+            email: 'email@email.com',
             dateCharge: '2016-05-05',
             price: 100,
             typeAccount: 'typeAccount',
             account: 'account',
-            discount: 0, // optional default 0
-            discountCode: 'discountCode', // optional
-            wasProcessed: false, // optional default false
-            status: 'pending', // optional default pending
+            accountBrand: 'Diners Club',
+            discount: 0,
+            discountCode: 'discountCode',
+            wasProcessed: false,
+            status: 'pending',
             last4: '0000',
             originalPrice: 90,
             totalFee: 10,
@@ -133,7 +141,12 @@ module.exports = {
             },
             productInfo: {
               productId: 'productId',
-              productName: 'productName'
+              productName: 'productName',
+              productImage: 'someUrl',
+              organizationId: 'organizationId',
+              organizationName: 'organization name',
+              organizationLocation: 'Austin, TX',
+              organizationImage: 'someUrl'
             },
             userInfo: {
               userId: 'UserId',
