@@ -70,6 +70,9 @@ module.exports = {
           _id: 'IdOrder',
           orderId: 'orderId',
           status: 'processing',
+          userId: 'userId',
+          createAt:'2016-05-05',
+          updateAt:'2016-05-05',
           paymentsPlan: [{
             _id: 'someId',
             destinationId: 'destinationId',

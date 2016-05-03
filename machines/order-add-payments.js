@@ -84,7 +84,11 @@ module.exports = {
         status: 200,
         body: {
           _id: 'IdOrder',
+          userId: 'userId',
+          orderId: 'orderId',
           status: 'processing',
+          createAt:'2016-05-05',
+          updateAt:'2016-05-05',
           paymentsPlan: [{
             destinationId: 'destinationId',
             dateCharge: '2016-05-05',
@@ -100,7 +104,6 @@ module.exports = {
             totalFee: 10,
             feePaidUp: 4.2,
             feeStripe: 3.6,
-            createAt:'2016-05-05',
             attempts: [
               {
                 status: 'success',
