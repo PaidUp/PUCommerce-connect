@@ -29,7 +29,6 @@ module.exports = {
         totalFee: 10,
         feePaidUp: 4.2,
         feeStripe: 3.6,
-        paymentId: 'paymentId',
         typeAccount: 'typeAccount',
         account: 'account',
         accountBrand: 'Diners Club',
