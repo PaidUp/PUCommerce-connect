@@ -71,6 +71,7 @@ module.exports = {
           orderId: 'orderId',
           status: 'processing',
           paymentsPlan: [{
+            _id: 'someId',
             destinationId: 'destinationId',
             description: 'some description',
             email: 'email@email.com',
