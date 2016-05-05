@@ -32,245 +32,109 @@ module.exports = {
       description: 'order created',
       example: {
         status: 200,
-        body: {
-          orders: [
-            {_id: 'IdOrder',
-              orderId: 'orderId',
-              userId: 'userId',
-              paymentsPlan: [{
-                _id: '_idpp',
-                dateCharge: '2016-05-05',
-                price: 100,
+        body: [
+          {
+            _id: 'xxx',
+            userId: '5644f60936c2f71c22b69267',
+            orderId: '100000',
+            paymentsPlan: {
+              _id: 'id',
+              beneficiaryInfo: {
+                beneficiaryName: 'asd asd',
+                beneficiaryId: '56450c1836c2f71c22b69273'
+              },
+              userInfo: {
+                userName: 'other name test last',
+                userId: '5644f60936c2f71c22b69267'
+              },
+              productInfo: {
+                organizationImage: 'http://virtual:8888/media/catalog/product/n/t/ntxbanditos.png',
+                organizationLocation: 'Springfield, MA',
+                organizationName: 'Isotopes Baseball',
+                organizationId: 'acct_17vBpJHXmwMXUx1q',
+                productImage: 'http://virtual:8888/media/catalog/product/n/t/ntxbanditos_2.png',
+                productName: '14U',
+                productId: '111'
+              },
+              paysFees: {
+                collections: true,
+                processing: true
+              },
+              collectionsFee: {
+                feeFlat: 0,
+                fee: 5
+              },
+              processingFees: {
+                achFeeFlatDisplay: 0,
+                achFeeFlatActual: 0,
+                achFeeDisplay: 0,
+                achFeeActual: 0,
+                cardFeeFlatDisplay: 0.3000000000000000,
+                cardFeeFlatActual: 0.3000000000000000,
+                cardFeeDisplay: 2.8999999999999999,
+                cardFeeActual: 2.8999999999999999
+              },
+              description: 'Payment In Full',
+              last4: '1111',
+              accountBrand: 'Visa',
+              account: 'card_176RghCi3y1KZk9uuWFxXsZq',
+              typeAccount: 'card',
+              paymentId: 'cus_7L7wdnf5rQkIrO',
+              feeStripe: 44.21,
+              feePaidUp: 70,
+              totalFee: 114.21,
+              originalPrice: 1400,
+              price: 1514.28,
+              dateCharge: 'Tue Apr 19 2016 19:00:00 GMT-0500 (COT)',
+              email: 'cogollo1987@yahoo.es',
+              destinationId: 'acct_16N29JCSxGRWBMDD',
+              attempts: [{
+                transferId: 'tr_182SGFCi3y1KZk9uKhC8LYx4',
+                accountBrand: 'Visa',
+                last4: '1111',
+                message: 'done',
                 status: 'succeeded',
-                updatedAt: '2016-08-08',
-                urlImage: 'http://urlImage',
-                description: 'some description',
-                productInfo: {
-                  productName: 'productName',
-                  city: 'Auxtin',
-                  state: 'Texas'
-                },
-                beneficiaryInfo: {
-                  beneficiaryName: 'beneficiaryName'
-                },
-                attempts: [
-                  {
-                    status: 'failed',
-                    dateAttemp: '2016-05-04',
-                    last4: '1234',
-                    accountBrand: 'american express',
-                    transferId: 'tr_xxx'
-                  }
-                ]
-              }]
-            }]
-      }}
-    },
-    error: {
-      description: 'error unexpected',
-      example: {
-        status: 500,
-        message: '[{"maybe some JSON": "like this"}]  (but could be any string)'
+                dateAttemp: '2016-04-20T20:49:24.152Z',
+                _id: '5717eb54c8138dcf6de107ea'
+              }],
+              status: 'succeeded',
+              wasProcessed: true,
+              discountCode: '',
+              discount: 0
+            },
+            status: 'complete'
+          }]
       }
+    }
+  },
+  error: {
+    description: 'error unexpected',
+    example: {
+      status: 500,
+      message: '[{"maybe some JSON": "like this"}]  (but could be any string)'
     }
   },
 
   fn: function (inputs, exits) {
-    // var Connector = require('../core/common/connector')
-
-    // var config = {
-    // url: '/api/v2/commerce/order/recent',
-    // baseUrl: inputs.baseUrl,
-    // method: 'post',
-    // token: inputs.token
-    // }
-
-    var body = inputs
-
-    return exits.success({
-      status: 200,
-      body: {
-        'orders': [
-          {
-            '_id': 'IdOrder1',
-            'orderId': '1000A1',
-            'userId': 'userId',
-            'paymentsPlan': [
-              {
-                '_id': '_idpp1',
-                'dateCharge': '2016-03-25',
-                'price': 100,
-                'status': 'succeeded',
-                'updatedAt': '2016-03-25',
-                'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
-                'description': 'some description1',
-                'productInfo': {
-                  'productName': 'PaidUpteam',
-                  'city': 'Auxtin',
-                  'state': 'Texas'
-                },
-                'beneficiaryInfo': {
-                  'beneficiaryName': 'JhonDoe'
-                },
-                'attempts': [
-                  {
-                    'status': 'succeeded',
-                    'dateAttemp': '2016-03-25',
-                    'last4': '1234',
-                    'accountBrand': 'american express',
-                    'transferId': 'tr_xxx1'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            '_id': 'IdOrder2',
-            'orderId': '1000A2',
-            'userId': 'userId',
-            'paymentsPlan': [
-              {
-                '_id': '_idpp2',
-                'dateCharge': '2016-02-25',
-                'price': 100,
-                'status': 'succeeded',
-                'updatedAt': '2016-02-25',
-                'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
-                'description': 'some description2',
-                'productInfo': {
-                  'productName': 'PaidUpteam',
-                  'city': 'Auxtin',
-                  'state': 'Texas'
-                },
-                'beneficiaryInfo': {
-                  'beneficiaryName': 'JhonDoe'
-                },
-                'attempts': [
-                  {
-                    'status': 'succeeded',
-                    'dateAttemp': '2016-02-25',
-                    'last4': '1234',
-                    'accountBrand': 'american express',
-                    'transferId': 'tr_xxx2'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            '_id': 'IdOrder3',
-            'orderId': '1000A3',
-            'userId': 'userId',
-            'paymentsPlan': [
-              {
-                '_id': '_idpp3',
-                'dateCharge': '2016-01-05',
-                'price': 100,
-                'status': 'succeeded',
-                'updatedAt': '2016-01-25',
-                'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
-                'description': 'some description3',
-                'productInfo': {
-                  'productName': 'PaidUpteam',
-                  'city': 'Auxtin',
-                  'state': 'Texas'
-                },
-                'beneficiaryInfo': {
-                  'beneficiaryName': 'JhonDoe'
-                },
-                'attempts': [
-                  {
-                    'status': 'succeeded',
-                    'dateAttemp': '2016-01-24',
-                    'last4': '1234',
-                    'accountBrand': 'american express',
-                    'transferId': 'tr_xxx3'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            '_id': 'IdOrder4',
-            'orderId': '1000A4',
-            'userId': 'userId',
-            'paymentsPlan': [
-              {
-                '_id': '_idpp4',
-                'dateCharge': '2016-01-20',
-                'price': 500,
-                'status': 'succeeded',
-                'updatedAt': '2016-01-20',
-                'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/message.png',
-                'description': 'some description4',
-                'productInfo': {
-                  'productName': 'Avengerteam',
-                  'city': 'New york city',
-                  'state': 'New york'
-                },
-                'beneficiaryInfo': {
-                  'beneficiaryName': 'IronMan'
-                },
-                'attempts': [
-                  {
-                    'status': 'succeeded',
-                    'dateAttemp': '2016-01-20',
-                    'last4': '1234',
-                    'accountBrand': 'american express',
-                    'transferId': 'tr_xxx4'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            '_id': 'IdOrder5',
-            'orderId': '1000A5',
-            'userId': 'userId',
-            'paymentsPlan': [
-              {
-                '_id': '_idpp5',
-                'dateCharge': '2015-12-25',
-                'price': 100,
-                'status': 'failed',
-                'updatedAt': '2015-12-25',
-                'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
-                'description': 'some description5',
-                'productInfo': {
-                  'productName': 'PaidUpteam',
-                  'city': 'Auxtin',
-                  'state': 'Texas'
-                },
-                'beneficiaryInfo': {
-                  'beneficiaryName': 'JhonDoe'
-                },
-                'attempts': [
-                  {
-                    'status': 'failed',
-                    'dateAttemp': '2015-12-25',
-                    'last4': '1234',
-                    'accountBrand': 'american express',
-                    'transferId': 'tr_xxx5'
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-    }})
-
-  // Connector.request(config, {}, body, function (err, resp) {
-  // if (err) {
-  // return exits.error({
-  // status: err.status,
-  // message: JSON.stringify(err.message)
-  // })
-  // } else {
-  // return exits.success({
-  // status: resp.status,
-  // body: resp.body
-  // })
-  // }
-  // })
+    var Connector = require('../core/common/connector')
+    var config = {
+      url: '/api/v3/commerce/order/recent/' + inputs.userId + '/' + inputs.limit,
+      baseUrl: inputs.baseUrl,
+      method: 'get',
+      token: inputs.token
+    }
+    Connector.request(config, {}, {}, function (err, resp) {
+      if (err) {
+        return exits.error({
+          status: err.status,
+          message: JSON.stringify(err.message)
+        })
+      } else {
+        return exits.success({
+          status: resp.status,
+          body: resp.body
+        })
+      }
+    })
   }
 }
