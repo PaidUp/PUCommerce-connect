@@ -32,78 +32,81 @@ module.exports = {
       description: 'order created',
       example: {
         status: 200,
-        body: {
-          orders: [
-            {_id: 'IdOrder',
-              orderId: 'orderId',
-              status: 'active',
-              userId: 'userId',
-              paymentsPlan: [{
-                destinationId: 'destinationId',
-                _id: '_idpp',
-                description: 'some description',
-                email: 'email@email.com',
-                dateCharge: '2016-05-05',
-                price: 100,
-                typeAccount: 'typeAccount',
-                account: 'account',
-                accountBrand: 'Diners Club',
-                discount: 0,
-                discountCode: 'discountCode',
-                wasProcessed: false,
-                status: 'pending',
-                last4: '0000',
-                originalPrice: 90,
-                totalFee: 10,
-                feePaidUp: 4.2,
-                feeStripe: 3.6,
-                attempts: [
-                  {
-                    status: 'success',
-                    dateAttemp: '2016-05-05',
-                    last4: '1234',
-                    accountBrand: 'american express',
-                    transferId: 'tr_xxx'
-                  }
-                ],
-                processingFees: {
-                  cardFeeActual: 12,
-                  cardFeeDisplay: 21,
-                  cardFeeFlatActual: 12,
-                  cardFeeFlatDisplay: 21,
-                  achFeeActual: 12,
-                  achFeeDisplay: 21,
-                  achFeeFlatActual: 12,
-                  achFeeFlatDisplay: 21
-                },
-                collectionsFee: {
-                  fee: 12,
-                  feeFlat: 21
-                },
-                paysFees: {
-                  processing: true,
-                  collections: true
-                },
-                productInfo: {
-                  productId: 'productId',
-                  productName: 'productName',
-                  productImage: 'someUrl',
-                  organizationId: 'organizationId',
-                  organizationName: 'organization name',
-                  organizationLocation: 'Austin, TX',
-                  organizationImage: 'someUrl'
-                },
-                userInfo: {
-                  userId: 'UserId',
-                  userName: 'userName'
-                },
-                beneficiaryInfo: {
-                  beneficiaryId: 'beneficiaryId',
-                  beneficiaryName: 'beneficiaryName'
-                }
-              }]
-            }]
-      }}
+        body: [
+          {
+            _id: 'xxx',
+            userId: '5644f60936c2f71c22b69267',
+            orderId: '100000',
+            paymentsPlan: [{
+              _id: 'id',
+              beneficiaryInfo: {
+                beneficiaryName: 'asd asd',
+                beneficiaryId: '56450c1836c2f71c22b69273'
+              },
+              userInfo: {
+                userName: 'other name test last',
+                userId: '5644f60936c2f71c22b69267'
+              },
+              productInfo: {
+                organizationImage: 'http://virtual:8888/media/catalog/product/n/t/ntxbanditos.png',
+                organizationLocation: 'Springfield, MA',
+                organizationName: 'Isotopes Baseball',
+                organizationId: 'acct_17vBpJHXmwMXUx1q',
+                productImage: 'http://virtual:8888/media/catalog/product/n/t/ntxbanditos_2.png',
+                productName: '14U',
+                productId: '111'
+              },
+              paysFees: {
+                collections: true,
+                processing: true
+              },
+              collectionsFee: {
+                feeFlat: 0,
+                fee: 5
+              },
+              processingFees: {
+                achFeeFlatDisplay: 0,
+                achFeeFlatActual: 0,
+                achFeeDisplay: 0,
+                achFeeActual: 0,
+                cardFeeFlatDisplay: 0.3000000000000000,
+                cardFeeFlatActual: 0.3000000000000000,
+                cardFeeDisplay: 2.8999999999999999,
+                cardFeeActual: 2.8999999999999999
+              },
+              description: 'Payment In Full',
+              last4: '1111',
+              accountBrand: 'Visa',
+              account: 'card_176RghCi3y1KZk9uuWFxXsZq',
+              typeAccount: 'card',
+              paymentId: 'cus_7L7wdnf5rQkIrO',
+              feeStripe: 44.21,
+              feePaidUp: 70,
+              totalFee: 114.21,
+              originalPrice: 1400,
+              price: 1514.28,
+              dateCharge: 'Tue Apr 19 2016 19:00:00 GMT-0500 (COT)',
+              email: 'cogollo1987@yahoo.es',
+              destinationId: 'acct_16N29JCSxGRWBMDD',
+              attempts: [{
+                transferId: 'tr_182SGFCi3y1KZk9uKhC8LYx4',
+                accountBrand: 'Visa',
+                last4: '1111',
+                message: 'done',
+                status: 'succeeded',
+                dateAttemp: '2016-04-20T20:49:24.152Z',
+                _id: '5717eb54c8138dcf6de107ea'
+              }],
+              status: 'succeeded',
+              wasProcessed: true,
+              discountCode: '',
+              discount: 0
+            }],
+            status: 'complete',
+            allProductName: ['productName'],
+            allBeneficiaryName: ['beneficiaryName']
+          }]
+      }
     },
     error: {
       description: 'error unexpected',
@@ -115,109 +118,29 @@ module.exports = {
   },
 
   fn: function (inputs, exits) {
-    /* var Connector = require('../core/common/connector')
+    var Connector = require('../core/common/connector')
 
     var config = {
-      url: '/api/v2/commerce/order/active',
+      url: '/api/v3/commerce/order/active/' + inputs.userId + '/' + inputs.limit,
       baseUrl: inputs.baseUrl,
-      method: 'post',
+      method: 'get',
       token: inputs.token
-    }*/
-
-    var body = inputs.filter
-
-    return exits.success({
-      status: 200,
-      body: {
-        'orders': [
-          {
-            '_id': 'IdOrder7',
-            'orderId': '1000A7',
-            'userId': 'userId',
-            'status': 'active',
-            'paymentsPlan': [
-              {
-                '_id': '_idpp7',
-                'dateCharge': '2016-06-25',
-                'price': 250,
-                'status': 'pending',
-                'last4': '1234',
-                'accountBrand': 'VISA',
-                'destinationId': 'destinationId',
-                'description': 'some description',
-                'email': 'email@email.com',
-                'typeAccount': 'typeAccount',
-                'account': 'account',
-                'discount': 0,
-                'discountCode': 'discountCode',
-                'wasProcessed': false,
-                'originalPrice': 90,
-                'totalFee': 10,
-                'feePaidUp': 4.2,
-                'feeStripe': 3.6,
-                'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
-                'attempts': [
-                  {
-                    'status': 'success',
-                    'dateAttemp': '2016-05-05',
-                    'last4': '1234',
-                    'accountBrand': 'american express',
-                    'transferId': 'tr_xxx'
-                  }
-                ],
-                'processingFees': {
-                  'cardFeeActual': 12,
-                  'cardFeeDisplay': 21,
-                  'cardFeeFlatActual': 12,
-                  'cardFeeFlatDisplay': 21,
-                  'achFeeActual': 12,
-                  'achFeeDisplay': 21,
-                  'achFeeFlatActual': 12,
-                  'achFeeFlatDisplay': 21
-                },
-                'collectionsFee': {
-                  'fee': 12,
-                  'feeFlat': 21
-                },
-                'paysFees': {
-                  'processing': true,
-                  'collections': true
-                },
-                'productInfo': {
-                  'productId': 'productId',
-                  'productName': 'productName',
-                  'productImage': 'someUrl',
-                  'organizationId': 'organizationId',
-                  'organizationName': 'organization name',
-                  'organizationLocation': 'Austin, TX',
-                  'organizationImage': 'someUrl'
-                },
-                'userInfo': {
-                  'userId': 'UserId',
-                  'userName': 'userName'
-                },
-                'beneficiaryInfo': {
-                  'beneficiaryId': 'beneficiaryId',
-                  'beneficiaryName': 'beneficiaryName'
-                }
-              }
-            ]
-          }
-        ]
-    }})
-  /*
-  Connector.request(config, {}, body, function (err, resp) {
-    if (err) {
-      return exits.error({
-        status: err.status,
-        message: JSON.stringify(err.message)
-      })
-    } else {
-      return exits.success({
-        status: resp.status,
-        body: resp.body
-      })
     }
-  })*/
+
+    Connector.request(config, {}, {}, function (err, resp) {
+      console.log('resp', resp)
+      console.log('err', err)
+      if (err) {
+        return exits.error({
+          status: err.status,
+          message: JSON.stringify(err.message)
+        })
+      } else {
+        return exits.success({
+          status: resp.status,
+          body: resp.body
+        })
+      }
+    })
   }
 }

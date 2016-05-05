@@ -126,8 +126,6 @@ module.exports = {
     }
 
     Connector.request(config, {}, {}, function (err, resp) {
-      console.log('resp', resp)
-      console.log('err', err)
       if (err) {
         return exits.error({
           status: err.status,
