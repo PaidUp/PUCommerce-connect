@@ -32,91 +32,113 @@ module.exports = {
       description: 'order created',
       example: {
         status: 200,
-        body: {
-          orders: [
-            {_id: 'IdOrder',
-              orderId: 'orderId',
-              userId: 'userId',
-              paymentsPlan: [{
-                _id: '_idpp',
-                dateCharge: '2016-05-05',
-                price: 100,
-                status: 'pending',
-                last4: '1234',
-                accountBrand: 'VISA',
-                urlImage: 'http://urlImage',
-                productInfo: {
-                  productName: 'productName'
-                },
-                beneficiaryInfo: {
-                  beneficiaryName: 'beneficiaryName'
-                }
-              }]
-            }]
-      }}
-    },
-    error: {
-      description: 'error unexpected',
-      example: {
-        status: 500,
-        message: '[{"maybe some JSON": "like this"}]  (but could be any string)'
+        body: [
+          {
+            _id: 'xxx',
+            userId: '5644f60936c2f71c22b69267',
+            orderId: '100000',
+            paymentsPlan: {
+              _id: 'id',
+              beneficiaryInfo: {
+                beneficiaryName: 'asd asd',
+                beneficiaryId: '56450c1836c2f71c22b69273'
+              },
+              userInfo: {
+                userName: 'other name test last',
+                userId: '5644f60936c2f71c22b69267'
+              },
+              productInfo: {
+                organizationImage: 'http://virtual:8888/media/catalog/product/n/t/ntxbanditos.png',
+                organizationLocation: 'Springfield, MA',
+                organizationName: 'Isotopes Baseball',
+                organizationId: 'acct_17vBpJHXmwMXUx1q',
+                productImage: 'http://virtual:8888/media/catalog/product/n/t/ntxbanditos_2.png',
+                productName: '14U',
+                productId: '111'
+              },
+              paysFees: {
+                collections: true,
+                processing: true
+              },
+              collectionsFee: {
+                feeFlat: 0,
+                fee: 5
+              },
+              processingFees: {
+                achFeeFlatDisplay: 0,
+                achFeeFlatActual: 0,
+                achFeeDisplay: 0,
+                achFeeActual: 0,
+                cardFeeFlatDisplay: 0.3000000000000000,
+                cardFeeFlatActual: 0.3000000000000000,
+                cardFeeDisplay: 2.8999999999999999,
+                cardFeeActual: 2.8999999999999999
+              },
+              description: 'Payment In Full',
+              last4: '1111',
+              accountBrand: 'Visa',
+              account: 'card_176RghCi3y1KZk9uuWFxXsZq',
+              typeAccount: 'card',
+              paymentId: 'cus_7L7wdnf5rQkIrO',
+              feeStripe: 44.21,
+              feePaidUp: 70,
+              totalFee: 114.21,
+              originalPrice: 1400,
+              price: 1514.28,
+              dateCharge: 'Tue Apr 19 2016 19:00:00 GMT-0500 (COT)',
+              email: 'cogollo1987@yahoo.es',
+              destinationId: 'acct_16N29JCSxGRWBMDD',
+              attempts: [{
+                transferId: 'tr_182SGFCi3y1KZk9uKhC8LYx4',
+                accountBrand: 'Visa',
+                last4: '1111',
+                message: 'done',
+                status: 'succeeded',
+                dateAttemp: '2016-04-20T20:49:24.152Z',
+                _id: '5717eb54c8138dcf6de107ea'
+              }],
+              status: 'succeeded',
+              wasProcessed: true,
+              discountCode: '',
+              discount: 0
+            },
+            status: 'complete'
+          }]
       }
+    }
+  },
+  error: {
+    description: 'error unexpected',
+    example: {
+      status: 500,
+      message: '[{"maybe some JSON": "like this"}]  (but could be any string)'
     }
   },
 
   fn: function (inputs, exits) {
-    // var Connector = require('../core/common/connector')
+    var Connector = require('../core/common/connector')
 
-    // var config = {
-    // url: '/api/v2/commerce/order/next',
-    // baseUrl: inputs.baseUrl,
-    // method: 'post',
-    // token: inputs.token
-    // }
+    var config = {
+      url: '/api/v3/commerce/order/next/' + inputs.userId + '/' + inputs.limit,
+      baseUrl: inputs.baseUrl,
+      method: 'get',
+      token: inputs.token
+    }
 
-    var body = inputs
-
-    return exits.success({
-      status: 200,
-      body: {
-        'orders': [
-          {
-            '_id': 'IdOrder6',
-            'orderId': '1000A6',
-            'userId': 'userId',
-            'paymentsPlan': [
-              {
-                '_id': '_idpp6',
-                'dateCharge': '2016-05-25',
-                'price': 250,
-                'status': 'pending',
-                'last4': '1234',
-                'accountBrand': 'VISA',
-                'urlImage': 'https: //dl.dropboxusercontent.com/u/21524755/pu.png',
-                'productInfo': {
-                  'productName': 'PaidUpteam'
-                },
-                'beneficiaryInfo': {
-                  'beneficiaryName': 'Jhon Doe'
-                }
-              }
-            ]
-          }
-        ]
-    }})
-
-  // Connector.request(config, {}, body, function (err, resp) {
-  // if (err) {
-  // return exits.error({
-  // status: err.status,
-  // message: JSON.stringify(err.message)
-  // })
-  // } else {
-  // return exits.success({
-  // status: resp.status,
-  // body: resp.body
-  // })
-  // }
-  // })
+    Connector.request(config, {}, {}, function (err, resp) {
+      console.log('resp', resp)
+      console.log('err', err)
+      if (err) {
+        return exits.error({
+          status: err.status,
+          message: JSON.stringify(err.message)
+        })
+      } else {
+        return exits.success({
+          status: resp.status,
+          body: resp.body
+        })
+      }
+    })
   }
 }
