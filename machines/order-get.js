@@ -131,7 +131,11 @@ module.exports = {
       token: inputs.token
     }
 
-    var body = inputs.filter
+    var body = {
+      orderId : inputs.orderId,
+      userId : inputs.userId,
+      limit: inputs.limit
+    }
 
     Connector.request(config, {}, body, function (err, resp) {
       if (err) {
