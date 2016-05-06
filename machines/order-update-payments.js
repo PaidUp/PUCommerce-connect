@@ -169,7 +169,8 @@ module.exports = {
     var body = {
       orderId: inputs.orderId,
       paymentPlanId: inputs.paymentPlanId,
-      paymentPlan: inputs.paymentPlan
+      paymentPlan: inputs.paymentPlan,
+      userSysId: inputs.userSysId
     }
 
     Connector.request(config, {}, body, function (err, resp) {

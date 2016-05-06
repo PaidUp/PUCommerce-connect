@@ -28,6 +28,11 @@ module.exports = {
       example: 5,
       description: 'quantity order to retrieve',
       required: true
+    },
+    order: {
+      example: 1,
+      description: '1 or -1',
+      required: true
     }
   },
 
@@ -134,7 +139,8 @@ module.exports = {
     var body = {
       orderId : inputs.orderId,
       userId : inputs.userId,
-      limit: inputs.limit
+      limit: inputs.limit,
+      order: inputs.order
     }
 
     Connector.request(config, {}, body, function (err, resp) {
