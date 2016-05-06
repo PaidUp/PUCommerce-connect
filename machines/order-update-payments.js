@@ -14,6 +14,11 @@ module.exports = {
       description: 'secret word for authenticate microservice.',
       required: true
     },
+    userSysId: {
+      example: 'userSysId',
+      description: 'user invoke update',
+      required: true
+    },
     orderId: {
       example: 'orderId',
       description: 'order ID',
