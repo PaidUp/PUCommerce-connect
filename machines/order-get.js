@@ -29,10 +29,10 @@ module.exports = {
       description: 'quantity order to retrieve',
       required: true
     },
-    order: {
+    sort: {
       example: 1,
       description: '1 or -1',
-      required: true
+      required: false
     }
   },
 
@@ -141,7 +141,7 @@ module.exports = {
       orderId : inputs.orderId,
       userId : inputs.userId,
       limit: inputs.limit,
-      order: inputs.order
+      sort: inputs.sort
     }
 
     Connector.request(config, {}, body, function (err, resp) {
