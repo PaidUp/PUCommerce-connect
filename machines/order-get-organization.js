@@ -42,7 +42,17 @@ module.exports = {
             _id: 'xxx',
             userId: '5644f60936c2f71c22b69267',
             orderId: '100000',
-            paymentsPlan: {
+            sumoriginalPrice: 16400,
+            alloriginalPrice: [0],
+            allDiscount: [0],
+            sumDiscount: 0,
+            sumPrice: 1000,
+            allPrice: [0],
+            allProductName: ['allProductName'],
+            allBeneficiaryName: ['allBeneficiaryName'],
+            updateAt: '2016-05-03T06:02:12.692Z',
+            createAt: '2016-05-03T06:02:12.692Z',
+            paymentsPlan: [{
               _id: 'id',
               beneficiaryInfo: {
                 beneficiaryName: 'asd asd',
@@ -106,8 +116,10 @@ module.exports = {
               wasProcessed: true,
               discountCode: '',
               discount: 0
-            },
-            status: 'complete'
+            }],
+            status: 'complete',
+            allProductName: ['productName'],
+            allBeneficiaryName: ['beneficiaryName']
           }]
       }
     },
@@ -131,8 +143,6 @@ module.exports = {
     }
 
     Connector.request(config, {}, {}, function (err, resp) {
-      console.log('ERR', err)
-      console.log('RESP', resp)
       if (err) {
         return exits.error({
           status: err.status,
