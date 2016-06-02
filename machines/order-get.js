@@ -48,6 +48,7 @@ module.exports = {
               orderId: 'orderId',
               status: 'processing',
               userId: 'userId',
+              description: 'description',
               totalPrice: 1000,
               createAt: 'someDate',
               paymentsPlan: [{
@@ -138,8 +139,8 @@ module.exports = {
     }
 
     var body = {
-      orderId : inputs.orderId,
-      userId : inputs.userId,
+      orderId: inputs.orderId,
+      userId: inputs.userId,
       limit: inputs.limit,
       sort: inputs.sort
     }

@@ -37,6 +37,7 @@ module.exports = {
             _id: 'xxx',
             userId: '5644f60936c2f71c22b69267',
             orderId: '100000',
+            description: 'description',
             paymentsPlan: [{
               _id: 'id',
               beneficiaryInfo: {

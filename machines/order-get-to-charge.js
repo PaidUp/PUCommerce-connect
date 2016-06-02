@@ -28,6 +28,7 @@ module.exports = {
               status: 'processing',
               userId: 'userId',
               orderId: 'orderId',
+              description: 'description',
               paymentsPlan: [{
                 destinationId: 'destinationId',
                 _id: '_idpp',

@@ -33,6 +33,7 @@ module.exports = {
               orderId: 'orderId',
               status: 'processing',
               userId: 'userId',
+              description: 'description',
               createAt: 'createAt',
               paymentsPlan: [{
                 destinationId: 'destinationId',

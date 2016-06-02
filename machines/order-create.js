@@ -23,6 +23,11 @@ module.exports = {
       description: 'userId to own order.',
       required: true
     },
+    description: {
+      example: 'this is a order description',
+      description: 'description of order.',
+      required: false
+    },
     paymentsPlan: {
       example: [{
         destinationId: 'destinationId',
@@ -92,8 +97,9 @@ module.exports = {
         status: 200,
         body: {
           _id: 'IdOrder',
-          orderId:'orderId',
+          orderId: 'orderId',
           status: 'pending',
+          description: 'description',
           paymentsPlan: []
         }
       }
@@ -119,6 +125,7 @@ module.exports = {
     }
     var body = {
       userId: inputs.userId,
+      description: inputs.description,
       paymentsPlan: inputs.paymentsPlan || []
     }
     // Connector.request(config, params, body, cb)
@@ -140,5 +147,5 @@ module.exports = {
         })
       }
     })
-  },
+  }
 }
