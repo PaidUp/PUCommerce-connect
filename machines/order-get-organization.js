@@ -41,6 +41,7 @@ module.exports = {
           {
             _id: 'xxx',
             userId: '5644f60936c2f71c22b69267',
+            description: 'description',
             orderId: '100000',
             sumoriginalPrice: 16400,
             alloriginalPrice: [0],

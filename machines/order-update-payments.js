@@ -76,8 +76,9 @@ module.exports = {
           orderId: 'orderId',
           status: 'processing',
           userId: 'userId',
-          createAt:'2016-05-05',
-          updateAt:'2016-05-05',
+          description: 'description',
+          createAt: '2016-05-05',
+          updateAt: '2016-05-05',
           paymentsPlan: [{
             _id: 'someId',
             version: 'v2',
