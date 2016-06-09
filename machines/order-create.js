@@ -25,10 +25,12 @@ module.exports = {
     },
     paymentsPlan: {
       example: [{
+        version: 'v2',
         destinationId: 'destinationId',
         email: 'some@email.com',
         dateCharge: '2016-05-05',
         price: 100,
+        basePrice: 100,
         originalPrice: 90,
         totalFee: 10,
         feePaidUp: 4.2,

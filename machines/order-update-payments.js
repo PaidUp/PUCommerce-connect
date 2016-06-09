@@ -80,11 +80,13 @@ module.exports = {
           updateAt:'2016-05-05',
           paymentsPlan: [{
             _id: 'someId',
+            version: 'v2',
             destinationId: 'destinationId',
             description: 'some description',
             email: 'email@email.com',
             dateCharge: '2016-05-05',
             price: 100,
+            basePrice: 100,
             typeAccount: 'typeAccount',
             account: 'account',
             accountBrand: 'Diners Club',
