@@ -26,10 +26,12 @@ module.exports = {
     },
     paymentsPlan: {
       example: [{
+        version: 'v2',
         destinationId: 'destinationId',
         email: 'some@email.com',
         dateCharge: '2016-05-05',
         price: 100,
+        basePrice: 100,
         originalPrice: 90,
         totalFee: 10,
         feePaidUp: 4.2,
@@ -100,12 +102,14 @@ module.exports = {
           createAt: '2016-05-05',
           updateAt: '2016-05-05',
           paymentsPlan: [{
+            version: 'v2',
             _id: 'someId',
             destinationId: 'destinationId',
             description: 'some description',
             email: 'email@email.com',
             dateCharge: '2016-05-05',
             price: 100,
+            basePrice: 100,
             typeAccount: 'typeAccount',
             account: 'account',
             accountBrand: 'Diners Club',
