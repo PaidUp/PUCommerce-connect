@@ -40,9 +40,9 @@ module.exports = {
             description: 'description',
             paymentsPlan: {
               _id: 'id',
-              beneficiaryInfo: {
-                beneficiaryName: 'asd asd',
-                beneficiaryId: '56450c1836c2f71c22b69273'
+              customInfo: {
+                formData: {},
+                formTemplate: []
               },
               userInfo: {
                 userName: 'other name test last',

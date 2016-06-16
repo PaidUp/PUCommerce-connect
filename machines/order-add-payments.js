@@ -77,9 +77,9 @@ module.exports = {
           userId: 'UserId',
           userName: 'userName'
         },
-        beneficiaryInfo: {
-          beneficiaryId: 'beneficiaryId',
-          beneficiaryName: 'beneficiaryName'
+        customInfo: {
+          formData: {},
+          formTemplate: []
         }
       }],
       description: 'array of payments plan',
@@ -162,9 +162,9 @@ module.exports = {
               userId: 'UserId',
               userName: 'userName'
             },
-            beneficiaryInfo: {
-              beneficiaryId: 'beneficiaryId',
-              beneficiaryName: 'beneficiaryName'
+            customInfo: {
+              formData: {},
+              formTemplate: []
             }
           }]
         }

@@ -50,14 +50,13 @@ module.exports = {
             sumPrice: 1000,
             allPrice: [0],
             allProductName: ['allProductName'],
-            allBeneficiaryName: ['allBeneficiaryName'],
             updateAt: '2016-05-03T06:02:12.692Z',
             createAt: '2016-05-03T06:02:12.692Z',
             paymentsPlan: [{
               _id: 'id',
-              beneficiaryInfo: {
-                beneficiaryName: 'asd asd',
-                beneficiaryId: '56450c1836c2f71c22b69273'
+              customInfo: {
+                formData: {},
+                formTemplate: []
               },
               userInfo: {
                 userName: 'other name test last',
@@ -119,8 +118,7 @@ module.exports = {
               discount: 0
             }],
             status: 'complete',
-            allProductName: ['productName'],
-            allBeneficiaryName: ['beneficiaryName']
+            allProductName: ['productName']
           }]
       }
     },
