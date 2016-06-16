@@ -81,9 +81,9 @@ module.exports = {
           userId: 'UserId',
           userName: 'userName'
         },
-        beneficiaryInfo: {
-          beneficiaryId: 'beneficiaryId',
-          beneficiaryName: 'beneficiaryName'
+        customInfo: {
+          formData: {},
+          formTemplate: []
         }
       }],
       description: 'paymentsPlan to own order.',
