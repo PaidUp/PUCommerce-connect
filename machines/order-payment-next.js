@@ -44,6 +44,7 @@ module.exports = {
                 formData: {},
                 formTemplate: []
               },
+              beneficiaryInfo:{},
               userInfo: {
                 userName: 'other name test last',
                 userId: '5644f60936c2f71c22b69267'

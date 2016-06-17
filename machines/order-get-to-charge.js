@@ -93,7 +93,8 @@ module.exports = {
                 customInfo: {
                   formData: {},
                   formTemplate: []
-                }
+                },
+                beneficiaryInfo:{}
               }]
             }]
       }}
