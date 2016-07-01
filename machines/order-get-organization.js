@@ -45,6 +45,8 @@ module.exports = {
             orderId: '100000',
             sumoriginalPrice: 16400,
             alloriginalPrice: [0],
+            sumbasePrice: 16400,
+            allbasePrice: [0],
             allDiscount: [0],
             sumDiscount: 0,
             sumPrice: 1000,
@@ -119,8 +121,7 @@ module.exports = {
               discountCode: '',
               discount: 0
             }],
-            status: 'complete',
-            allProductName: ['productName']
+            status: 'complete'
           }]
       }
     },
