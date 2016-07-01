@@ -30,12 +30,14 @@ module.exports = {
               orderId: 'orderId',
               description: 'description',
               paymentsPlan: [{
+                version: 'v1',
                 destinationId: 'destinationId',
                 _id: '_idpp',
                 description: 'some description',
                 email: 'email@email.com',
                 dateCharge: '2016-05-05',
                 price: 100,
+                basePrice: 100,
                 typeAccount: 'typeAccount',
                 account: 'account',
                 accountBrand: 'Diners Club',
@@ -89,10 +91,11 @@ module.exports = {
                   userId: 'UserId',
                   userName: 'userName'
                 },
-                beneficiaryInfo: {
-                  beneficiaryId: 'beneficiaryId',
-                  beneficiaryName: 'beneficiaryName'
-                }
+                customInfo: {
+                  formData: {},
+                  formTemplate: []
+                },
+                beneficiaryInfo:{}
               }]
             }]
       }}

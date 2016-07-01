@@ -30,10 +30,12 @@ module.exports = {
     },
     paymentsPlan: {
       example: [{
+        version: 'v2',
         destinationId: 'destinationId',
         email: 'some@email.com',
         dateCharge: '2016-05-05',
         price: 100,
+        basePrice: 100,
         originalPrice: 90,
         basePrice: 546,
         totalFee: 10,
@@ -80,9 +82,9 @@ module.exports = {
           userId: 'UserId',
           userName: 'userName'
         },
-        beneficiaryInfo: {
-          beneficiaryId: 'beneficiaryId',
-          beneficiaryName: 'beneficiaryName'
+        customInfo: {
+          formData: {},
+          formTemplate: []
         }
       }],
       description: 'paymentsPlan to own order.',

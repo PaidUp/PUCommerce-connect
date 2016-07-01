@@ -36,6 +36,7 @@ module.exports = {
         email: 'email@email.com',
         dateCharge: '2016-05-05',
         price: 100,
+        basePrice: 100,
         typeAccount: 'typeAccount',
         account: 'account',
         accountBrand: 'Diners Club',
@@ -82,11 +83,13 @@ module.exports = {
           updateAt: '2016-05-05',
           paymentsPlan: [{
             _id: 'someId',
+            version: 'v2',
             destinationId: 'destinationId',
             description: 'some description',
             email: 'email@email.com',
             dateCharge: '2016-05-05',
             price: 100,
+            basePrice: 100,
             typeAccount: 'typeAccount',
             account: 'account',
             accountBrand: 'Diners Club',
@@ -140,9 +143,9 @@ module.exports = {
               userId: 'UserId',
               userName: 'userName'
             },
-            beneficiaryInfo: {
-              beneficiaryId: 'beneficiaryId',
-              beneficiaryName: 'beneficiaryName'
+            customInfo: {
+              formData: {},
+              formTemplate: []
             }
           }]
         }
@@ -180,7 +183,7 @@ module.exports = {
       if (err) {
         return exits.error({
           status: err.status,
-          message: err.body
+          message: JSON.stringify(err)
         })
       } else {
         return exits.success({
