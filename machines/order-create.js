@@ -37,7 +37,6 @@ module.exports = {
         price: 100,
         basePrice: 100,
         originalPrice: 90,
-        basePrice: 546,
         totalFee: 10,
         feePaidUp: 4.2,
         feeStripe: 3.6,

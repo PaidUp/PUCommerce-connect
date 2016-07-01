@@ -48,7 +48,6 @@ module.exports = {
                 paymentId: 'paymentId',
                 last4: '0000',
                 originalPrice: 90,
-                basePrice: 546,
                 totalFee: 10,
                 feePaidUp: 4.2,
                 feeStripe: 3.6,
