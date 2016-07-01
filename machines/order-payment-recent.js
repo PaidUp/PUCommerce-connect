@@ -85,6 +85,7 @@ module.exports = {
               feePaidUp: 70,
               totalFee: 114.21,
               originalPrice: 1400,
+              basePrice: 546,
               price: 1514.28,
               dateCharge: 'Tue Apr 19 2016 19:00:00 GMT-0500 (COT)',
               email: 'cogollo1987@yahoo.es',

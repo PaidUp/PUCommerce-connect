@@ -35,6 +35,7 @@ module.exports = {
         dateCharge: '2016-05-05',
         price: 100,
         originalPrice: 90,
+        basePrice: 546,
         totalFee: 10,
         feePaidUp: 4.2,
         feeStripe: 3.6,
