@@ -45,6 +45,8 @@ module.exports = {
             orderId: '100000',
             sumoriginalPrice: 16400,
             alloriginalPrice: [0],
+            sumbasePrice: 16400,
+            allbasePrice: [0],
             allDiscount: [0],
             sumDiscount: 0,
             sumPrice: 1000,
@@ -99,7 +101,8 @@ module.exports = {
               feeStripe: 44.21,
               feePaidUp: 70,
               totalFee: 114.21,
-              originalPrice: 1400,
+              basePrice: 1400,
+              originalPrice: 1514.28,
               price: 1514.28,
               dateCharge: 'Tue Apr 19 2016 19:00:00 GMT-0500 (COT)',
               email: 'cogollo1987@yahoo.es',
@@ -118,8 +121,7 @@ module.exports = {
               discountCode: '',
               discount: 0
             }],
-            status: 'complete',
-            allProductName: ['productName']
+            status: 'complete'
           }]
       }
     },
