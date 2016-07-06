@@ -51,7 +51,8 @@
       "order-payment-next",
       "order-search",
       "order-get-organization",
-      "order-update-all-payments"
+      "order-update-all-payments",
+      "order-get-str"
     ],
     "iconSrc": "https://app.getpaidup.com/favicon.ico"
   },
