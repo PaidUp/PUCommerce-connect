@@ -162,6 +162,10 @@ module.exports = {
               userId: 'UserId',
               userName: 'userName'
             },
+            beneficiaryInfo: {
+                beneficiaryName: "Joceline",
+                beneficiaryId: "N/A"
+              },
             customInfo: {
               formData: {},
               formTemplate: []

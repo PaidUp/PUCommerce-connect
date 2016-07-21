@@ -40,6 +40,10 @@ module.exports = {
             description: 'description',
             paymentsPlan: [{
               _id: 'id',
+              beneficiaryInfo: {
+                beneficiaryName: "Joceline",
+                beneficiaryId: "N/A"
+              },
               customInfo: {
                 formData: {},
                 formTemplate: []

@@ -44,7 +44,8 @@ module.exports = {
         status: 200,
         body: {
           orders: [
-            {_id: 'IdOrder',
+            {
+              _id: 'IdOrder',
               orderId: 'orderId',
               status: 'processing',
               userId: 'userId',
@@ -117,10 +118,14 @@ module.exports = {
                   formData: {},
                   formTemplate: []
                 },
-                beneficiaryInfo:{}
+                beneficiaryInfo: {
+                  beneficiaryName: "Joceline",
+                  beneficiaryId: "N/A"
+                },
               }]
             }]
-      }}
+        }
+      }
     },
     error: {
       description: 'error unexpected',

@@ -60,7 +60,10 @@ module.exports = {
                 formData: {},
                 formTemplate: []
               },
-              beneficiaryInfo:{},
+              beneficiaryInfo: {
+                beneficiaryName: "Joceline",
+                beneficiaryId: "N/A"
+              },
               userInfo: {
                 userName: 'other name test last',
                 userId: '5644f60936c2f71c22b69267'

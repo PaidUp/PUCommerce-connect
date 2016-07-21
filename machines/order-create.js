@@ -81,6 +81,10 @@ module.exports = {
           userId: 'UserId',
           userName: 'userName'
         },
+        beneficiaryInfo: {
+          beneficiaryName: "Joceline",
+          beneficiaryId: "N/A"
+        },
         customInfo: {
           formData: {},
           formTemplate: []
@@ -116,7 +120,7 @@ module.exports = {
   },
 
   fn: function (inputs, exits
-  /**/
+    /**/
   ) {
     var Connector = require('../core/common/connector')
     var config = {
@@ -137,7 +141,7 @@ module.exports = {
           status: err.status,
           message: err.message.message
         })
-      }else if (err) {
+      } else if (err) {
         return exits.error({
           status: err.status,
           message: JSON.stringify(err.message)
