@@ -50,7 +50,8 @@
       "order-payment-recent",
       "order-payment-next",
       "order-search",
-      "order-get-organization"
+      "order-get-organization",
+      "order-update-webhook"
     ],
     "iconSrc": "https://app.getpaidup.com/favicon.ico"
   },
