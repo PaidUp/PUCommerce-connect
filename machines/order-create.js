@@ -116,7 +116,7 @@ module.exports = {
   },
 
   fn: function (inputs, exits
-  /**/
+    /**/
   ) {
     var Connector = require('../core/common/connector')
     var config = {
@@ -137,7 +137,7 @@ module.exports = {
           status: err.status,
           message: err.message.message
         })
-      }else if (err) {
+      } else if (err) {
         return exits.error({
           status: err.status,
           message: JSON.stringify(err.message)

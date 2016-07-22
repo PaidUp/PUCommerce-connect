@@ -141,6 +141,10 @@ module.exports = {
               userId: 'UserId',
               userName: 'userName'
             },
+            beneficiaryInfo: {
+              beneficiaryName: "Joceline",
+              beneficiaryId: "N/A"
+            },
             customInfo: {
               formData: {},
               formTemplate: []
@@ -159,7 +163,7 @@ module.exports = {
   },
 
   fn: function (inputs, exits
-  /**/
+    /**/
   ) {
     var Connector = require('../core/common/connector')
 

@@ -1,6 +1,6 @@
 module.exports = {
-  friendlyName: 'Order Add Payments',
-  description: 'Add dues to order',
+  friendlyName: 'Order update all payment',
+  description: 'update payments to order',
   cacheable: false,
   sync: false,
   inputs: {
@@ -19,33 +19,31 @@ module.exports = {
       description: 'user invoke update',
       required: true
     },
-    orderId: {
+    _id: {
       example: 'orderId',
-      description: 'order that you want add payment.',
+      description: 'order ID',
       required: true
     },
     paymentsPlan: {
-      example: [{
-        version: 'v2',
+      example: `{pps: [{
         destinationId: 'destinationId',
-        email: 'some@email.com',
+        description: 'some description',
+        email: 'email@email.com',
         dateCharge: '2016-05-05',
         price: 100,
         basePrice: 100,
+        typeAccount: 'typeAccount',
+        account: 'account',
+        accountBrand: 'Diners Club',
+        discount: 0,
+        discountCode: 'discountCode',
+        wasProcessed: false,
+        status: 'pending',
+        last4: '0000',
         originalPrice: 90,
         totalFee: 10,
         feePaidUp: 4.2,
         feeStripe: 3.6,
-        typeAccount: 'typeAccount',
-        account: 'account',
-        accountBrand: 'Diners Club',
-        last4: '0000',
-        discount: 0, // optional default 0
-        discountCode: 'discountCode', // optional
-        wasProcessed: false, // optional default false
-        status: 'pending', // optional default pending
-        description: 'some description',
-        paymentId: 'paymentId',
         processingFees: {
           cardFeeActual: 12,
           cardFeeDisplay: 21,
@@ -56,33 +54,9 @@ module.exports = {
           achFeeFlatActual: 12,
           achFeeFlatDisplay: 21
         },
-        collectionsFee: {
-          fee: 12,
-          feeFlat: 21
-        },
-        paysFees: {
-          processing: true,
-          collections: true
-        },
-        productInfo: {
-          productId: 'productId',
-          productName: 'productName',
-          productImage: 'someUrl',
-          organizationId: 'organizationId',
-          organizationName: 'organization name',
-          organizationLocation: 'Austin, TX',
-          organizationImage: 'someUrl'
-        },
-        userInfo: {
-          userId: 'UserId',
-          userName: 'userName'
-        },
-        customInfo: {
-          formData: {},
-          formTemplate: []
-        }
-      }],
-      description: 'array of payments plan',
+        attempts: '*'
+      }]}`,
+      description: 'object of payments plan',
       required: true
     }
   },
@@ -93,17 +67,17 @@ module.exports = {
       description: 'order created',
       example: {
         status: 200,
-        body: {
+        body: `{
           _id: 'IdOrder',
           orderId: 'orderId',
           status: 'processing',
-          description: 'description',
           userId: 'userId',
+          description: 'description',
           createAt: '2016-05-05',
           updateAt: '2016-05-05',
           paymentsPlan: [{
-            version: 'v2',
             _id: 'someId',
+            version: 'v2',
             destinationId: 'destinationId',
             description: 'some description',
             email: 'email@email.com',
@@ -162,16 +136,12 @@ module.exports = {
               userId: 'UserId',
               userName: 'userName'
             },
-            beneficiaryInfo: {
-                beneficiaryName: "Joceline",
-                beneficiaryId: "N/A"
-              },
             customInfo: {
               formData: {},
               formTemplate: []
             }
           }]
-        }
+        }`
       }
     },
     error: {
@@ -189,14 +159,14 @@ module.exports = {
     var Connector = require('../core/common/connector')
 
     var config = {
-      url: '/api/v2/commerce/order/add-payments',
+      url: '/api/v2/commerce/order/update-all-payments',
       baseUrl: inputs.baseUrl,
       method: 'post',
       token: inputs.token
     }
 
     var body = {
-      orderId: inputs.orderId,
+      _id: inputs._id,
       paymentsPlan: inputs.paymentsPlan,
       userSysId: inputs.userSysId
     }
@@ -205,7 +175,7 @@ module.exports = {
       if (err) {
         return exits.error({
           status: err.status,
-          message: err.body
+          message: JSON.stringify(err)
         })
       } else {
         return exits.success({

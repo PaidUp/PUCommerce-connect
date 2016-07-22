@@ -24,7 +24,8 @@ module.exports = {
         status: 200,
         body: {
           orders: [
-            {_id: 'IdOrder',
+            {
+              _id: 'IdOrder',
               status: 'processing',
               userId: 'userId',
               orderId: 'orderId',
@@ -80,7 +81,7 @@ module.exports = {
                 },
                 productInfo: {
                   productId: 'productId',
-                  productName: 'productName',productImage: 'someUrl',
+                  productName: 'productName', productImage: 'someUrl',
                   organizationId: 'organizationId',
                   organizationName: 'organization name',
                   organizationLocation: 'Austin, TX',
@@ -94,10 +95,14 @@ module.exports = {
                   formData: {},
                   formTemplate: []
                 },
-                beneficiaryInfo:{}
+                beneficiaryInfo: {
+                  beneficiaryName: "Joceline",
+                  beneficiaryId: "N/A"
+                },
               }]
             }]
-      }}
+        }
+      }
     },
     error: {
       description: 'error unexpected',

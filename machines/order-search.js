@@ -29,7 +29,8 @@ module.exports = {
         status: 200,
         body: {
           orders: [
-            {_id: 'IdOrder',
+            {
+              _id: 'IdOrder',
               orderId: 'orderId',
               status: 'processing',
               userId: 'userId',
@@ -100,10 +101,14 @@ module.exports = {
                   formData: {},
                   formTemplate: []
                 },
-                beneficiaryInfo:{}
+                beneficiaryInfo: {
+                  beneficiaryName: "Joceline",
+                  beneficiaryId: "N/A"
+                },
               }]
             }]
-      }}
+        }
+      }
     },
     error: {
       description: 'error unexpected',
@@ -124,7 +129,7 @@ module.exports = {
       token: inputs.token
     }
 
-    var body = {params: inputs.params}
+    var body = { params: inputs.params }
 
     Connector.request(config, {}, body, function (err, resp) {
       if (err) {

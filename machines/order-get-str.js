@@ -42,10 +42,9 @@ module.exports = {
       description: 'order created',
       example: {
         status: 200,
-        body: {
+        body: `{
           orders: [
-            {
-              _id: 'IdOrder',
+            {_id: 'IdOrder',
               orderId: 'orderId',
               status: 'processing',
               userId: 'userId',
@@ -118,14 +117,11 @@ module.exports = {
                   formData: {},
                   formTemplate: []
                 },
-                beneficiaryInfo: {
-                  beneficiaryName: "Joceline",
-                  beneficiaryId: "N/A"
-                },
+                beneficiaryInfo:{}
               }]
             }]
-        }
-      }
+      }`
+    }
     },
     error: {
       description: 'error unexpected',
@@ -162,7 +158,7 @@ module.exports = {
       } else {
         return exits.success({
           status: resp.status,
-          body: resp.body
+          body: JSON.stringify(resp.body)
         })
       }
     })
