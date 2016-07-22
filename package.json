@@ -51,12 +51,9 @@
       "order-payment-next",
       "order-search",
       "order-get-organization",
-<<<<<<< HEAD
-      "order-update-webhook"
-=======
       "order-update-all-payments",
-      "order-get-str"
->>>>>>> c2efe7d813ec71ba31e220597ec0ca533c2f36d8
+      "order-get-str",
+      "order-update-webhook"
     ],
     "iconSrc": "https://app.getpaidup.com/favicon.ico"
   },
