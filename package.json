@@ -1,6 +1,6 @@
 {
   "name": "paidup-commerce-connect",
-  "version": "0.13.6",
+  "version": "0.14.0",
   "description": "Connector for PaidUp Microservice Commerce",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js",
@@ -52,7 +52,8 @@
       "order-search",
       "order-get-organization",
       "order-update-all-payments",
-      "order-get-str"
+      "order-get-str",
+      "order-update-webhook"
     ],
     "iconSrc": "https://app.getpaidup.com/favicon.ico"
   },
