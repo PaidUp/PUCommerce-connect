@@ -69,7 +69,9 @@ module.exports = {
                   achFeeActual: 12,
                   achFeeDisplay: 21,
                   achFeeFlatActual: 12,
-                  achFeeFlatDisplay: 21
+                  achFeeFlatDisplay: 21,
+                  achFeeCapActual: 0.25,
+                  achFeeCapDisplay: 5
                 },
                 collectionsFee: {
                   fee: 12,

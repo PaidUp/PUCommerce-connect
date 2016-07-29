@@ -93,7 +93,9 @@ module.exports = {
                 cardFeeFlatDisplay: 0.3000000000000000,
                 cardFeeFlatActual: 0.3000000000000000,
                 cardFeeDisplay: 2.8999999999999999,
-                cardFeeActual: 2.8999999999999999
+                cardFeeActual: 2.8999999999999999,
+                achFeeCapActual: 0.25,
+                achFeeCapDisplay: 5
               },
               description: 'Payment In Full',
               last4: '1111',
