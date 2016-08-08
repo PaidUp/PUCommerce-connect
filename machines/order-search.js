@@ -107,6 +107,7 @@ module.exports = {
                   beneficiaryName: "Joceline",
                   beneficiaryId: "N/A"
                 },
+                paymentMethods:[]
               }]
             }]
         }

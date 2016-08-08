@@ -117,7 +117,8 @@ module.exports = {
                   formData: {},
                   formTemplate: []
                 },
-                beneficiaryInfo:{}
+                beneficiaryInfo:{},
+                paymentMethods:[]
               }]
             }]
       }`

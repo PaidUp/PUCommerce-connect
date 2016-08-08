@@ -152,7 +152,8 @@ module.exports = {
             customInfo: {
               formData: {},
               formTemplate: []
-            }
+            },
+            paymentMethods:[]
           }]
         }
       }
