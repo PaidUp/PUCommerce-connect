@@ -86,7 +86,8 @@ module.exports = {
         customInfo: {
           formData: {},
           formTemplate: []
-        }
+        },
+        paymentMethods:[]
       }],
       description: 'paymentsPlan to own order.',
       required: true
