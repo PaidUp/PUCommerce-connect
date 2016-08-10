@@ -139,7 +139,9 @@ module.exports = {
               achFeeActual: 12,
               achFeeDisplay: 21,
               achFeeFlatActual: 12,
-              achFeeFlatDisplay: 21
+              achFeeFlatDisplay: 21,
+              achFeeCapActual: 0.25,
+              achFeeCapDisplay: 5
             },
             collectionsFee: {
               fee: 12,
@@ -163,13 +165,14 @@ module.exports = {
               userName: 'userName'
             },
             beneficiaryInfo: {
-                beneficiaryName: "Joceline",
-                beneficiaryId: "N/A"
-              },
+              beneficiaryName: "Joceline",
+              beneficiaryId: "N/A"
+            },
             customInfo: {
               formData: {},
               formTemplate: []
-            }
+            },
+            paymentMethods:[]
           }]
         }
       }
@@ -184,7 +187,7 @@ module.exports = {
   },
 
   fn: function (inputs, exits
-  /**/
+    /**/
   ) {
     var Connector = require('../core/common/connector')
 
