@@ -172,7 +172,7 @@ module.exports = {
               formData: {},
               formTemplate: []
             },
-            paymentMethods:[]
+            paymentMethods:['some']
           }]
         }
       }
