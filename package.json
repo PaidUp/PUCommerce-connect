@@ -54,7 +54,8 @@
       "order-update-all-payments",
       "order-get-str",
       "order-update-webhook",
-      "order-history"
+      "order-history",
+      "report-revenue-projection"
     ],
     "iconSrc": "https://app.getpaidup.com/favicon.ico"
   },

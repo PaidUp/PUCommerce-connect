@@ -13,7 +13,7 @@ var all = {
       urlPrefix : '/api/v1',
       isHttps: false,
       host: 'localhost',
-      port: 9001,
+      port: 9002,
       token:'TDUserToken-CHANGE-ME!'
     }
   }
