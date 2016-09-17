@@ -53,7 +53,7 @@ module.exports = {
     var Connector = require('../core/common/connector')
 
     var config = {
-      url: inputs.organizationId ? '/api/v3/commerce/order/transactions/organization/'+inputs.organizationId : '/api/v3/commerce/order/transactions',
+      url: '/api/v3/commerce/order/transactions/organization/'+inputs.organizationId,
       baseUrl: inputs.baseUrl,
       method: 'get',
       token: inputs.token
