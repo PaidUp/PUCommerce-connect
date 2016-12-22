@@ -28,6 +28,16 @@ module.exports = {
       example: 1,
       description: '1 or -1',
       required: true
+    },
+    fromDate: {
+      example: '2016-01-01',
+      description: 'start date query',
+      required: false
+    },
+    toDate: {
+      example: '2016-06-01',
+      description: 'end date query',
+      required: false
     }
   },
 
@@ -142,25 +152,35 @@ module.exports = {
   fn: function (inputs, exits) {
     var Connector = require('../core/common/connector')
 
-    var config = {
-      url: '/api/v3/commerce/order/organization/' + inputs.organizationId + '/' + inputs.limit + '/' + inputs.sort,
-      baseUrl: inputs.baseUrl,
-      method: 'get',
-      token: inputs.token
-    }
-
-    Connector.request(config, {}, {}, function (err, resp) {
-      if (err) {
-        return exits.error({
-          status: err.status,
-          message: JSON.stringify(err.message)
-        })
-      } else {
-        return exits.success({
-          status: resp.status,
-          body: resp.body
-        })
+    try {
+      var from = inputs.fromDate ? new Date(inputs.fromDate).toISOString().substr(0, 10) : new Date().getFullYear() + '-01-01';
+      var to = inputs.toDate ? new Date(inputs.toDate).toISOString().substr(0, 10) : new Date().toISOString().substr(0, 10);
+      var config = {
+        url: '/api/v3/commerce/order/organization/' + inputs.organizationId + '/' + inputs.limit + '/' + inputs.sort ,
+        //+'/'+from+'/'+to,
+        baseUrl: inputs.baseUrl,
+        method: 'get',
+        token: inputs.token
       }
-    })
+
+      Connector.request(config, {}, {}, function (err, resp) {
+        if (err) {
+          return exits.error({
+            status: err.status,
+            message: JSON.stringify(err.message)
+          })
+        } else {
+          return exits.success({
+            status: resp.status,
+            body: resp.body
+          })
+        }
+      })
+    } catch (error) {
+      return exits.error({
+        status: 500,
+        message: JSON.stringify(err)
+      })
+    }
   }
 }
