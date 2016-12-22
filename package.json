@@ -1,6 +1,6 @@
 {
   "name": "paidup-commerce-connect",
-  "version": "0.14.14",
+  "version": "0.14.15",
   "description": "Connector for PaidUp Microservice Commerce",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js",
