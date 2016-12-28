@@ -58,7 +58,8 @@
       "report-revenue-projection",
       "report-revenue",
       "order-transactions",
-      "order-transactions-organization"
+      "order-transactions-organization",
+      "order-cancel"
     ],
     "iconSrc": "https://app.getpaidup.com/favicon.ico"
   },
