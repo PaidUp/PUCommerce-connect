@@ -19,6 +19,11 @@ module.exports = {
       example : "100006",
       description : 'ORDER ID',
       required : true
+    },
+    userSysId : {
+      example : "XXXXXXXXXXX",
+      description : 'user id',
+      required : true
     }
   },
 
@@ -47,13 +52,16 @@ module.exports = {
     var Connector  = require('../core/common/connector');
 
     var config = {
-      url: '/api/v3/commerce/order/cancel/'+inputs.orderId,
+      url: '/api/v3/commerce/order/cancel',
       baseUrl: inputs.baseUrl,
-      method: 'get',
+      method: 'post',
       token : inputs.token
     };
 
-    Connector.request(config, {}, {}, function(err, resp){
+    Connector.request(config, {}, {
+      userSysId: inputs.userSysId,
+      orderId: inputs.orderId
+    }, function(err, resp){
       if(err){
         return exits.error({
           status: err.status,
