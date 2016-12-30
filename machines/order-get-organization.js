@@ -153,8 +153,8 @@ module.exports = {
     var Connector = require('../core/common/connector')
 
     try {
-      var from = inputs.fromDate ? new Date(inputs.fromDate).toISOString().substr(0, 10) : new Date().getFullYear() + '-01-01';
-      var to = inputs.toDate ? new Date(inputs.toDate).toISOString().substr(0, 10) : new Date().toISOString().substr(0, 10);
+      var from = inputs.fromDate ? new Date(inputs.fromDate) : new Date().getFullYear() + '-01-01';
+      var to = inputs.toDate ? new Date(inputs.toDate) : new Date();
       var config = {
         url: '/api/v3/commerce/order/organization/' + inputs.organizationId + '/' + inputs.limit + '/' + inputs.sort 
         +'/'+from+'/'+to,
