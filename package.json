@@ -59,7 +59,8 @@
       "report-revenue",
       "order-transactions",
       "order-transactions-organization",
-      "order-cancel"
+      "order-cancel",
+      "order-payment-remove"
     ],
     "iconSrc": "https://app.getpaidup.com/favicon.ico"
   },
