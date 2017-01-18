@@ -74,7 +74,7 @@ module.exports = {
           organizationName: 'organization name',
           organizationLocation: 'Austin, TX',
           organizationImage: 'someUrl',
-          transactionDescription: "transactionDescription"
+          statementDescriptor: "statementDescriptor"
         },
         userInfo: {
           userId: 'UserId',
@@ -163,7 +163,7 @@ module.exports = {
               organizationName: 'organization name',
               organizationLocation: 'Austin, TX',
               organizationImage: 'someUrl',
-              transactionDescription: "transactionDescription"
+              statementDescriptor: "statementDescriptor"
             },
             userInfo: {
               userId: 'UserId',

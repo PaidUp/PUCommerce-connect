@@ -59,7 +59,7 @@ module.exports = {
                 productImage: 'http://virtual:8888/media/catalog/product/n/t/ntxbanditos_2.png',
                 productName: '14U',
                 productId: '111',
-                transactionDescription: "transactionDescription"
+                statementDescriptor: "statementDescriptor"
               },
               paysFees: {
                 collections: true,
