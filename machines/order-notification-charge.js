@@ -48,7 +48,7 @@ module.exports = {
     var Connector = require('../core/common/connector')
 
     var config = {
-      url: '/api/v3/commerce/order/charge/notification/gtIsoDate/' + inputs.gtDate + "/gtIsoDate/"+inputs.ltDate,
+      url: '/api/v3/commerce/order/charge/notification/gt/' + inputs.gtDate + "/lt/"+inputs.ltDate,
       baseUrl: inputs.baseUrl,
       method: 'get',
       token: inputs.token
