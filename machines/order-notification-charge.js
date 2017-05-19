@@ -14,7 +14,12 @@ module.exports = {
       description: 'secret word for authenticate microservice.',
       required: true
     },
-    date: {
+    gtDate: {
+      example: '2017-04-14T17:57:39.781Z',
+      description: 'include orders since this date',
+      required: true
+    },
+    ltDate: {
       example: '2017-04-14T17:57:39.781Z',
       description: 'include orders until this date',
       required: true
@@ -43,7 +48,7 @@ module.exports = {
     var Connector = require('../core/common/connector')
 
     var config = {
-      url: '/api/v3/commerce/order/charge/notification/' + inputs.date,
+      url: '/api/v3/commerce/order/charge/notification/gtIsoDate/' + inputs.gtDate + "/gtIsoDate/"+inputs.ltDate,
       baseUrl: inputs.baseUrl,
       method: 'get',
       token: inputs.token
