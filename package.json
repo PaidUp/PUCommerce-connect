@@ -62,7 +62,8 @@
       "order-transactions-organization",
       "order-cancel",
       "order-payment-remove",
-      "order-notification-charge"
+      "order-notification-charge",
+      "order-activate"
     ],
     "iconSrc": "https://app.getpaidup.com/favicon.ico"
   },
