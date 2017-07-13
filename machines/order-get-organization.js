@@ -38,6 +38,11 @@ module.exports = {
       example: '2016-06-01',
       description: 'end date query',
       required: false
+    },
+    productIds: {
+      example: ['44','43', '45'],
+      description: 'products id array',
+      required: false
     }
   },
 
@@ -163,8 +168,9 @@ module.exports = {
         method: 'get',
         token: inputs.token
       }
+      var query = params.productIds || {}
 
-      Connector.request(config, {}, {}, function (err, resp) {
+      Connector.request(config, query, {}, function (err, resp) {
         if (err) {
           return exits.error({
             status: err.status,
