@@ -168,7 +168,7 @@ module.exports = {
         method: 'get',
         token: inputs.token
       }
-      var query = inputs.productIds || {}
+      var query = {productIds: inputs.productIds} || {}
 
       Connector.request(config, query, {}, function (err, resp) {
         if (err) {
