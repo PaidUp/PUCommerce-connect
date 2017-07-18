@@ -40,8 +40,8 @@ module.exports = {
       required: false
     },
     productIds: {
-      example: ['44','43', '45'],
-      description: 'products id array',
+      example: "'44','43', '45'",
+      description: 'products id string',
       required: false
     }
   },
@@ -168,7 +168,7 @@ module.exports = {
         method: 'get',
         token: inputs.token
       }
-      var query = {productIds: inputs.productIds} || {}
+      var query = inputs.productIds.length > 0 ? {productIds: inputs.productIds} : {}
 
       Connector.request(config, query, {}, function (err, resp) {
         if (err) {
