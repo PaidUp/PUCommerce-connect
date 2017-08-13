@@ -65,11 +65,6 @@ module.exports = {
       },
       description: 'object of payments plan',
       required: true
-    },
-    generateInvoice: {
-      example: true,
-      description: 'flag to generate invoice',
-      required: false
     }
   },
 
@@ -160,7 +155,7 @@ module.exports = {
               formData: {},
               formTemplate: []
             },
-            paymentMethods:[]
+            paymentMethods: []
           }]
         }
       }
@@ -190,8 +185,7 @@ module.exports = {
       orderId: inputs.orderId,
       paymentPlanId: inputs.paymentPlanId,
       paymentPlan: inputs.paymentPlan,
-      userSysId: inputs.userSysId,
-      generateInvoice: inputs.generateInvoice
+      userSysId: inputs.userSysId
     }
 
     Connector.request(config, {}, body, function (err, resp) {
