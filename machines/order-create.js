@@ -28,6 +28,11 @@ module.exports = {
       description: 'description of order.',
       required: false
     },
+    season: {
+      example: 'this is a season description',
+      description: 'description of season.',
+      required: false
+    },
     paymentsPlan: {
       example: [{
         version: 'v2',
@@ -105,6 +110,7 @@ module.exports = {
           _id: 'IdOrder',
           orderId: 'orderId',
           status: 'pending',
+          season: 'season desc',
           description: 'description',
           paymentsPlan: []
         }

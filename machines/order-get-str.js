@@ -46,6 +46,7 @@ module.exports = {
           orders: [
             {_id: 'IdOrder',
               orderId: 'orderId',
+              season: 'season1',
               status: 'processing',
               userId: 'userId',
               description: 'description',

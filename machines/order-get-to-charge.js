@@ -30,6 +30,7 @@ module.exports = {
               userId: 'userId',
               orderId: 'orderId',
               description: 'description',
+              season: 'season1',
               paymentsPlan: [{
                 version: 'v1',
                 destinationId: 'destinationId',

@@ -19,6 +19,11 @@ module.exports = {
       description: 'owner (organization) order to retrieve',
       required: true
     },
+    seasons: {
+      example: "'season','season43', 'season45'",
+      description: 'filter by seasson',
+      required: false
+    },
     limit: {
       example: 5,
       description: 'quantity order to retrieve',
@@ -56,6 +61,7 @@ module.exports = {
           {
             _id: 'xxx',
             userId: '5644f60936c2f71c22b69267',
+            season: 'seasson1',
             description: 'description',
             orderId: '100000',
             sumoriginalPrice: 16400,
@@ -168,7 +174,14 @@ module.exports = {
         method: 'get',
         token: inputs.token
       }
-      var query = inputs.productIds.length > 0 ? {productIds: inputs.productIds} : {}
+
+      var query = {};
+      if (inputs.productIds && inputs.productIds.length > 0){
+        query['productIds'] = inputs.productIds
+      }
+      if (inputs.seasons && inputs.seasons.length > 0){
+        query['seasons'] = inputs.seasons
+      }
 
       Connector.request(config, query, {}, function (err, resp) {
         if (err) {
