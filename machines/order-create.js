@@ -138,6 +138,7 @@ module.exports = {
     var body = {
       userId: inputs.userId,
       description: inputs.description,
+      season: inputs.season,
       paymentsPlan: inputs.paymentsPlan || []
     }
     // Connector.request(config, params, body, cb)
