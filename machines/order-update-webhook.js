@@ -61,6 +61,7 @@ module.exports = {
                 attempts: [
                   {
                     status: 'success',
+                    amount: 0,
                     dateAttemp: '2016-05-05',
                     last4: '1234',
                     accountBrand: 'american express',

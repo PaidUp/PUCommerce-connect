@@ -101,6 +101,7 @@ module.exports = {
                 status: 'success',
                 dateAttemp: '2016-05-05',
                 last4: '1234',
+                amount: 0,
                 accountBrand: 'american express',
                 transferId: 'tr_xxx'
               }
