@@ -91,6 +91,7 @@ module.exports = {
               feePaidUp: 70,
               totalFee: 114.21,
               originalPrice: 1514.28,
+              refund: 0,
               basePrice: 1400,
               price: 1514.28,
               dateCharge: 'Tue Apr 19 2016 19:00:00 GMT-0500 (COT)',
