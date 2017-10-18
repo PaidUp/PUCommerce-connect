@@ -79,6 +79,9 @@ module.exports = {
                   {
                     status: 'success',
                     amount: 0,
+                    totalFee: 0,
+                    feePaidUp: 0,
+                    feeStripe: 0,
                     dateAttemp: '2016-05-05',
                     last4: '1234',
                     accountBrand: 'american express',

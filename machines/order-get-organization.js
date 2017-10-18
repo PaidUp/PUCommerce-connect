@@ -138,6 +138,9 @@ module.exports = {
               attempts: [{
                 transferId: 'tr_182SGFCi3y1KZk9uKhC8LYx4',
                 amount: 0,
+                totalFee: 0,
+                feePaidUp: 0,
+                feeStripe: 0,
                 accountBrand: 'Visa',
                 last4: '1111',
                 message: 'done',

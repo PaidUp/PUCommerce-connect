@@ -104,6 +104,9 @@ module.exports = {
                 last4: '1111',
                 message: 'done',
                 amount: 0,
+                totalFee: 0,
+                feePaidUp: 0,
+                feeStripe: 0,
                 status: 'succeeded',
                 dateAttemp: '2016-04-20T20:49:24.152Z',
                 _id: '5717eb54c8138dcf6de107ea'
