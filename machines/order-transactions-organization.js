@@ -28,6 +28,11 @@ module.exports = {
       example: 1,
       description: '1 or -1',
       required: false
+    },
+    teams: {
+      example: ["100", "110"],
+      description: 'list of team id',
+      required: false
     }
   },
 
@@ -51,9 +56,12 @@ module.exports = {
 
   fn: function (inputs, exits) {
     var Connector = require('../core/common/connector')
-
+    var url = '/api/v3/commerce/order/transactions/organization/'+encodeURI(inputs.organizationId);
+    if(inputs.teams && inputs.teams.length){
+      url = url + "?teams=" + encodeURI(inputs.teams.join());
+    }
     var config = {
-      url: '/api/v3/commerce/order/transactions/organization/'+inputs.organizationId,
+      url: url,
       baseUrl: inputs.baseUrl,
       method: 'get',
       token: inputs.token
