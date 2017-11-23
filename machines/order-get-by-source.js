@@ -54,10 +54,11 @@ module.exports = {
   fn: function (inputs, exits) {
     var Connector = require('../core/common/connector')
     var accountId = inputs.accountId;
+    var userId = inputs.userId;
     var status = inputs.status.join();
 
     var config = {
-      url: encodeURI('/api/v3/commerce/order/source/' + accountId + "?status=" + status),
+      url: encodeURI(`/api/v3/commerce/order/source/${accountId}/user/${userId}?status=${status}`),
       baseUrl: inputs.baseUrl,
       method: 'get',
       token: inputs.token
