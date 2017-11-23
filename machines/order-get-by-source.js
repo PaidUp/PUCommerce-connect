@@ -54,17 +54,18 @@ module.exports = {
   fn: function (inputs, exits) {
     var Connector = require('../core/common/connector')
     var accountId = inputs.accountId;
-    var status = inputs.status.split();
+    var status = inputs.status.join();
 
     var config = {
-      url: encodeURI('/api/v3/commerce/order/source/'+accountId+"?status="+status),
+      url: encodeURI('/api/v3/commerce/order/source/' + accountId + "?status=" + status),
       baseUrl: inputs.baseUrl,
       method: 'get',
       token: inputs.token
     }
 
-    Connector.request(config, {}, body, function (err, resp) {
+    Connector.request(config, {}, {}, function (err, resp) {
       if (err) {
+        console.log(err)
         return exits.error({
           status: err.status,
           message: JSON.stringify(err.message)
@@ -76,5 +77,6 @@ module.exports = {
         })
       }
     })
+
   }
 }
